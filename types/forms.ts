@@ -1,5 +1,6 @@
-export interface LoginFormData {
+export interface LoginCredentialsFormData {
     email: string;
+    password: string;
 };
 
 export interface CategoryFormData {
