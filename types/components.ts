@@ -1,5 +1,8 @@
-import React, { SVGProps } from "react";
+import React, { ReactNode, SVGProps } from "react";
+import { LucideIcon } from "lucide-react";
 import { FieldError } from "react-hook-form";
+import Icons from "@/components/common/Icons";
+import { UserRole } from "@/types/nextjs";
 
 export type IconSvgProps = SVGProps<SVGSVGElement> & {
 	size?: number;
@@ -22,6 +25,8 @@ export interface ErrorComponentState {
 	hasError: boolean;
 };
 
+export type Icon = LucideIcon;
+
 export type SendingStateType = 'SENDING' | 'SENT' | 'ERROR' | 'IDLE';
 
 export type LinkType = 'github' | 'deploy';
@@ -35,34 +40,34 @@ export interface LinksListProps {
 export interface ProjectListProps {
 	id: number;
 	slug: string;
-    title: string;
-    description: string;
-    image: string;
-    languages: CategoryListProps[];
+	title: string;
+	description: string;
+	image: string;
+	languages: CategoryListProps[];
 	frameworks: CategoryListProps[];
 	platforms: CategoryListProps[];
 	links: LinksListProps[];
 };
 
 export interface ProjectModalProps {
-    card: ProjectListProps;
-    isOpen: boolean;
+	card: ProjectListProps;
+	isOpen: boolean;
 	next: boolean;
 	prev: boolean;
 	totalCards: number;
 	currentIndex: number;
-    onOpen: () => void;
-    onClose: () => void;
+	onOpen: () => void;
+	onClose: () => void;
 	setCard: (id: number | null) => void;
 };
 
 export interface FiltersProps {
-    filterPlatforms: Set<string>;
-    setFilterPlatforms: (filter: Set<string>) => void;
-    filterLanguages: Set<string>;
-    setFilterLanguages: (filter: Set<string>) => void;
-    filterFrameworks: Set<string>;
-    setFilterFrameworks: (filter: Set<string>) => void;
+	filterPlatforms: Set<string>;
+	setFilterPlatforms: (filter: Set<string>) => void;
+	filterLanguages: Set<string>;
+	setFilterLanguages: (filter: Set<string>) => void;
+	filterFrameworks: Set<string>;
+	setFilterFrameworks: (filter: Set<string>) => void;
 	searchQuery?: string;
 	setSearchQuery?: (query: string) => void;
 	hideSearch?: boolean;
@@ -82,7 +87,7 @@ export type SidebarDataType = {
 	id: string;
 	label: string;
 	icon?: React.FC<{
-		className?: string 
+		className?: string
 		size?: number;
 	}>;
 	link: string;
@@ -99,4 +104,31 @@ export interface EditorProps {
 	value: string;
 	error: FieldError | undefined;
 	onChange: (data: string) => void;
+};
+
+export interface MaxWidthWrapperProps {
+	className?: string;
+	children: ReactNode;
+	large?: boolean;
+};
+
+export type NavItem = {
+	title: string;
+	href: string;
+	badge?: number;
+	disabled?: boolean;
+	external?: boolean;
+	authorizeOnly?: UserRole;
+	icon?: keyof typeof Icons;
+};
+
+export type SidebarNavItem = {
+	title: string;
+	items: NavItem[];
+	authorizeOnly?: UserRole;
+	icon?: keyof typeof Icons;
+};
+
+export interface DashboardSidebarProps {
+	links: SidebarNavItem[];
 };
