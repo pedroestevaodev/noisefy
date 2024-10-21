@@ -1,6 +1,6 @@
 'use server';
 
-import { currentRole } from "@/lib/auth";
+import { currentRole } from "@/lib/session";
 import { UserRole } from "@prisma/client";
 
 export const admin = async () => {

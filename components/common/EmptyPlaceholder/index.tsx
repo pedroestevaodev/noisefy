@@ -2,7 +2,6 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 import { EmptyPlaceholderDescriptionProps, EmptyPlaceholderIconProps, EmptyPlaceholderProps, EmptyPlaceholderTitleProps } from "@/types/components";
 import Icons from "@/components/common/Icons";
-import SendTest from "../SendTest";
 
 const EmptyPlaceholder = ({
     className,
@@ -19,8 +18,6 @@ const EmptyPlaceholder = ({
         >
             <div className="flex max-w-[420px] flex-col items-center text-center">
                 {children}
-
-                <SendTest />
             </div>
         </div>
     );

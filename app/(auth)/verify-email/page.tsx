@@ -1,8 +1,11 @@
 import VerificationForm from "@/components/auth/VerificationForm";
+import { Suspense } from "react";
 
 const VerifyEmailPage = () => {
     return (
-        <VerificationForm />
+        <Suspense>
+            <VerificationForm />
+        </Suspense>
     );
 };
 
