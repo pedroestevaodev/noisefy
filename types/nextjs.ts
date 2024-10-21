@@ -6,8 +6,6 @@ export interface ChildrenProps {
 	children: React.ReactNode;
 };
 
-export enum UserRole { ADMIN, USER };
-
 export type NextSearchParams = { [key: string]: string | string[] | undefined };
 
 export type NextServerComponentsParams<T = any> = {

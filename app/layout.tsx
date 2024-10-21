@@ -4,18 +4,9 @@ import clsx from "clsx";
 import Providers from "@/components/Providers";
 import { siteConfig } from "@/config/site";
 import { ChildrenProps } from "@/types/nextjs";
-import { fontSans } from "@/config/fonts";
+import { fontGeist, fontHeading, fontSans, fontUrban } from "@/config/fonts";
 
-export const metadata: Metadata = {
-	title: {
-		default: siteConfig.name,
-		template: `%s - ${siteConfig.name}`,
-	},
-	description: siteConfig.description,
-	icons: {
-		icon: "/favicon.ico",
-	},
-};
+export const metadata: Metadata = siteConfig;
 
 export const viewport: Viewport = {
 	themeColor: [
@@ -31,8 +22,11 @@ const RootLayout = ({
 		<html suppressHydrationWarning lang="pt-BR">
 			<body
 				className={clsx(
-					"min-h-screen bg-background antialiased",
-					fontSans.className,
+					"min-h-screen bg-background font-sans antialiased",
+					fontSans.variable,
+					fontUrban.variable,
+					fontHeading.variable,
+					fontGeist.variable,
 				)}
 			>
 				<Providers>

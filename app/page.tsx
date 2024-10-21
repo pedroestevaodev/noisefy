@@ -1,19 +1,17 @@
-import LoginButton from "@/components/auth/LoginButton";
-import { Button } from "@/components/ui/button";
+import Footer from "@/components/landing/Footer";
+import Hero from "@/components/landing/Hero";
+import Navbar from "@/components/landing/Navbar";
+import NavbarMobile from "@/components/landing/NavbarMobile";
 
 export default function Home() {
 	return (
-		<div className="relative flex flex-col">
-			<main className="relative flex flex-grow min-h-screen">
-				<LoginButton>
-					<Button
-						variant="secondary"
-						size="lg"
-					>
-						Sign in
-					</Button>
-				</LoginButton>
+		<div className="flex min-h-screen flex-col">
+			<NavbarMobile />
+			<Navbar scroll />
+			<main className="flex-1">
+				<Hero />
 			</main>
+			<Footer />
 		</div>
 	);
 }

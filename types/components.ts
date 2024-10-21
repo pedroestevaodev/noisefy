@@ -2,7 +2,8 @@ import React, { ReactNode, SVGProps } from "react";
 import { LucideIcon } from "lucide-react";
 import { FieldError } from "react-hook-form";
 import Icons from "@/components/common/Icons";
-import { UserRole } from "@/types/nextjs";
+import { AvatarProps } from "@radix-ui/react-avatar";
+import { User, UserRole } from "@prisma/client";
 
 export type IconSvgProps = SVGProps<SVGSVGElement> & {
 	size?: number;
@@ -132,3 +133,32 @@ export type SidebarNavItem = {
 export interface DashboardSidebarProps {
 	links: SidebarNavItem[];
 };
+
+export interface UserAvatarProps extends AvatarProps {
+	user: Pick<User, 'image' | 'name'>
+};
+
+export interface LandingNavbarProps {
+	scroll?: boolean;
+	large?: boolean;
+};
+
+export interface DashboardHeaderProps {
+	heading: string;
+	text?: string;
+	children?: React.ReactNode;
+};
+
+export interface EmptyPlaceholderProps extends React.HTMLAttributes<HTMLDivElement> {};
+
+export interface EmptyPlaceholderIconProps extends Partial<React.SVGProps<SVGSVGElement>> {
+	name: keyof typeof Icons;
+	ref?:
+	| ((instance: SVGSVGElement | null) => void)
+	| React.RefObject<SVGSVGElement>
+	| null;
+};
+
+export interface EmptyPlaceholderTitleProps extends React.HTMLAttributes<HTMLHeadingElement> {};
+
+export interface EmptyPlaceholderDescriptionProps extends React.HTMLAttributes<HTMLParagraphElement> {};

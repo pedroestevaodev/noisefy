@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 import plugin from "tailwindcss/plugin";
+import { fontFamily } from "tailwindcss/defaultTheme";
 
 const config: Config = {
 	darkMode: ["class"],
@@ -63,7 +64,13 @@ const config: Config = {
     				'3': 'hsl(var(--chart-3))',
     				'4': 'hsl(var(--chart-4))',
     				'5': 'hsl(var(--chart-5))'
-    			}
+    			},
+    		},
+    		fontFamily: {
+    			sans: ["var(--font-sans)", ...fontFamily.sans],
+    			urban: ["var(--font-urban)", ...fontFamily.sans],
+    			heading: ["var(--font-heading)", ...fontFamily.sans],
+    			geist: ["var(--font-geist)", ...fontFamily.sans]
     		},
     		keyframes: {
     			'accordion-down': {
@@ -88,37 +95,6 @@ const config: Config = {
     			'accordion-up': 'accordion-up 0.2s ease-out'
     		}
     	},
-    	screens: {
-    		xs: '375px',
-    		'2xs': '480px',
-    		sm: '576px',
-    		md: '768px',
-    		'md-filters': '850px',
-    		lg: '992px',
-    		xl: '1200px',
-    		xxl: '1400px',
-    		'max-xs': {
-    			max: '374px'
-    		},
-    		'max-2xs': {
-    			max: '479px'
-    		},
-    		'max-sm': {
-    			max: '575px'
-    		},
-    		'max-md': {
-    			max: '767px'
-    		},
-    		'max-lg': {
-    			max: '991px'
-    		},
-    		'max-xl': {
-    			max: '1199px'
-    		},
-    		'max-xxl': {
-    			max: '1399px'
-    		}
-    	}
     },
 	plugins: [
 		require('tailwindcss-animate'),
