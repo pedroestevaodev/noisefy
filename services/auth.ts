@@ -124,6 +124,8 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             token.role = existingUser.role;
             token.isTwoFactorEnabled = existingUser.isTwoFactorEnabled;
 
+            console.log('JWT Token:', token);
+
             return token;
         },
     },
