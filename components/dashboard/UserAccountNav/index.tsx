@@ -18,18 +18,18 @@ const UserAccountNav = () => {
 
     const { isMobile } = useMediaQuery();
 
-    if (!user) {
-        return (
-            <div className="size-8 animate-pulse rounded-full border bg-muted" />
-        );
-    }
+    // if (!user) {
+    //     return (
+    //         <div className="size-8 animate-pulse rounded-full border bg-muted" />
+    //     );
+    // }
 
     if (isMobile) {
         return (
             <Drawer open={open} onClose={closeDrawer}>
                 <DrawerTrigger onClick={() => setOpen(true)}>
                     <UserAvatar
-                        user={{ name: user.name || null, image: user.image || null }}
+                        user={{ name: user?.name || null, image: user?.image || null }}
                         className="size-9 border"
                     />
                 </DrawerTrigger>
@@ -45,8 +45,8 @@ const UserAccountNav = () => {
 
                         <div className="flex items-center justify-start gap-2 p-2">
                             <div className="flex flex-col">
-                                {user.name && <p className="font-medium">{user.name}</p>}
-                                {user.email && (
+                                {user?.name && <p className="font-medium">{user.name}</p>}
+                                {user?.email && (
                                     <p className="w-[200px] truncate text-muted-foreground">
                                         {user.email}
                                     </p>
@@ -55,7 +55,7 @@ const UserAccountNav = () => {
                         </div>
 
                         <ul role="list" className="mb-14 mt-1 w-full text-muted-foreground">
-                            {user.role === "ADMIN" ? (
+                            {user?.role === "ADMIN" ? (
                                 <li className="rounded-lg text-foreground hover:bg-muted">
                                     <Link
                                         href="/admin"
@@ -116,15 +116,15 @@ const UserAccountNav = () => {
         <DropdownMenu open={open} onOpenChange={setOpen}>
             <DropdownMenuTrigger>
                 <UserAvatar
-                    user={{ name: user.name || null, image: user.image || null }}
+                    user={{ name: user?.name || null, image: user?.image || null }}
                     className="size-8 border"
                 />
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
                 <div className="flex items-center justify-start gap-2 p-2">
                     <div className="flex flex-col space-y-1 leading-none">
-                        {user.name && <p className="font-medium">{user.name}</p>}
-                        {user.email && (
+                        {user?.name && <p className="font-medium">{user.name}</p>}
+                        {user?.email && (
                             <p className="w-[200px] truncate text-sm text-muted-foreground">
                                 {user?.email}
                             </p>
@@ -133,7 +133,7 @@ const UserAccountNav = () => {
                 </div>
                 <DropdownMenuSeparator />
 
-                {user.role === "ADMIN" ? (
+                {user?.role === "ADMIN" ? (
                     <DropdownMenuItem asChild>
                         <Link href="/admin" className="flex items-center space-x-2.5">
                             <Lock className="size-4" />
