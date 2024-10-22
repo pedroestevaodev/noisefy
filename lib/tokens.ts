@@ -29,6 +29,8 @@ export const generatePasswordResetToken = async (email: string) => {
         }
     });
 
+    await prisma.$disconnect();
+
     return passwordResetToken;
 };
 
@@ -57,6 +59,8 @@ export const generateVerificationToken = async (email: string) => {
         }
     });
 
+    await prisma.$disconnect();
+
     return verificationToken;
 };
 
@@ -84,6 +88,8 @@ export const generateTwoFactorToken = async (email: string) => {
             expires,
         }
     });
+
+    await prisma.$disconnect();
 
     return twoFactorToken;
 };

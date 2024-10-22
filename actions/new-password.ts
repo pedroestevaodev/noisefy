@@ -54,5 +54,7 @@ export const newPassword = async (values: z.infer<typeof NewPasswordSchema>, tok
         },
     });
 
+    await prisma.$disconnect();
+
     return { success: "Password updated!" };
 };

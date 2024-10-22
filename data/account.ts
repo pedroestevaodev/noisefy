@@ -9,5 +9,7 @@ export const getAccountByUserId = async (userId: string) => {
         return account;
     } catch (error) {
         return null;
+    } finally {
+        await prisma.$disconnect();
     }
 };

@@ -70,5 +70,7 @@ export const settings = async (values: z.infer<typeof SettingsSchema>) => {
         },
     });
 
+    await prisma.$disconnect();
+
     return { success: "Settings updated!" };
 };

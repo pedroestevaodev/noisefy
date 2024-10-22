@@ -40,5 +40,7 @@ export const register = async (values: z.infer<typeof RegisterSchema>) => {
         token: verificationToken.token
     });
 
+    await prisma.$disconnect();
+
     return { success: "Confirmation email sent!" };
 };

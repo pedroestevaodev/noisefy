@@ -9,6 +9,8 @@ export const getVerificationTokenByToken = async (token: string) => {
         return verificationToken;
     } catch (error) {
         return null;
+    } finally {
+        await prisma.$disconnect();
     }
 };
 
@@ -21,5 +23,7 @@ export const getVerificationTokenByEmail = async (email: string) => {
         return verificationToken;
     } catch (error) {
         return null;
+    } finally {
+        await prisma.$disconnect();
     }
 };

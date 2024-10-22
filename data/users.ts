@@ -7,6 +7,8 @@ export const getUserByEmail = async (email: string) => {
         return user;
     } catch (error) {
         return null;
+    } finally {
+        await prisma.$disconnect();
     }
 };
 
@@ -17,5 +19,7 @@ export const getUserById = async (id: string) => {
         return user;
     } catch (error) {
         return null;
+    } finally {
+        await prisma.$disconnect();
     }
 };
