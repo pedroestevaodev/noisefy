@@ -4,10 +4,13 @@ import { SessionProvider } from "next-auth/react";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import ThemeProvider from "@/components/Providers/ThemeProvider";
 import { Toaster } from "@/components/ui/sonner";
+import { auth } from "@/services/auth";
 
-const Providers = ({ children }: ProvidersProps) => {
+const Providers = async ({ children }: ProvidersProps) => {
+    const session = await auth();
+
     return (
-        <SessionProvider>
+        <SessionProvider session={session}>
             <ThemeProvider
                 attribute="class"
                 defaultTheme="system"
