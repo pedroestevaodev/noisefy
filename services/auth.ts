@@ -31,7 +31,10 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 
                     const passwordMatch = await bcrypt.compare(password, user.password);
 
-                    if (passwordMatch) return user;
+                    if (passwordMatch) {
+                        console.log("Usuário autenticado:", user);
+                        return user;
+                    };
                 }
 
                 return null;
@@ -106,6 +109,8 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
                 session.user.image = token.picture;
             }
 
+            console.log("Sessão atual", session);
+
             return session;
         },
         async jwt({ token }) {
@@ -123,8 +128,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             token.picture = existingUser.image;
             token.role = existingUser.role;
             token.isTwoFactorEnabled = existingUser.isTwoFactorEnabled;
-
-            console.log('JWT Token:', token);
 
             return token;
         },
