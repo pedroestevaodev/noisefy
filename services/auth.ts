@@ -31,10 +31,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 
                     const passwordMatch = await bcrypt.compare(password, user.password);
 
-                    if (passwordMatch) {
-                        console.log("Usuário autenticado:", user);
-                        return user;
-                    };
+                    if (passwordMatch) return user;
                 }
 
                 return null;
@@ -108,8 +105,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
                 session.user.name = token.name;
                 session.user.image = token.picture;
             }
-
-            console.log("Sessão atual", session);
 
             return session;
         },

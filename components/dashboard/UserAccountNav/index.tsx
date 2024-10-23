@@ -3,16 +3,15 @@
 import { useEffect, useState } from "react";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import { Drawer, DrawerContent, DrawerOverlay, DrawerPortal, DrawerTrigger } from "@/components/ui/drawer";
-import useCurrentUser from "@/hooks/useCurrentUser";
 import Link from "next/link";
 import { LayoutDashboard, Lock, LogOut, Settings } from "lucide-react";
 import UserAvatar from "../UserAvatar";
-import { signOut, useSession } from "next-auth/react";
+import { getSession, signOut, useSession } from "next-auth/react";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 
 const UserAccountNav = () => {
-    const session = useSession();
-    const user = session.data?.user;
+    const { data: session, status } = useSession();
+    const user = session?.user;
 
     const [open, setOpen] = useState<boolean>(false);
     const closeDrawer = () => setOpen(false);
@@ -20,8 +19,10 @@ const UserAccountNav = () => {
     const { isMobile } = useMediaQuery();
 
     useEffect(() => {
-        console.log("Sessão atual", session);
-    }, []);
+        if (status === 'unauthenticated') {
+            getSession();
+        }
+    }, [status]);
 
     if (!user) {
         return (
