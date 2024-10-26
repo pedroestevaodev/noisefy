@@ -1,13 +1,13 @@
+import { currentUser } from "@/lib/session";
 import { ChildrenProps } from "@/types/nextjs";
+import { redirect } from "next/navigation";
 
-const AdminLayout = ({ children }: ChildrenProps) => {
-    return (
-        <div className="relative flex flex-col">
-            <div className="relative flex flex-grow min-h-screen items-center justify-center bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-sky-400 to-blue-800">
-                {children}
-            </div>
-        </div>
-    );
+const AdminDashboard = async ({ children }: ChildrenProps) => {
+    const user = await currentUser();
+
+    if (!user || user.role !== "ADMIN") redirect("/login");
+
+    return (<>{children}</>);
 };
 
-export default AdminLayout;
+export default AdminDashboard;

@@ -1,9 +1,10 @@
-import React, { ReactNode, SVGProps } from "react";
+import React, { Dispatch, ReactNode, SetStateAction, SVGProps } from "react";
 import { LucideIcon } from "lucide-react";
 import { FieldError } from "react-hook-form";
 import Icons from "@/components/common/Icons";
 import { AvatarProps } from "@radix-ui/react-avatar";
 import { User, UserRole } from "@prisma/client";
+import { UserSubscriptionPlan } from "./subscription";
 
 export type IconSvgProps = SVGProps<SVGSVGElement> & {
 	size?: number;
@@ -149,7 +150,7 @@ export interface DashboardHeaderProps {
 	children?: React.ReactNode;
 };
 
-export interface EmptyPlaceholderProps extends React.HTMLAttributes<HTMLDivElement> {};
+export interface EmptyPlaceholderProps extends React.HTMLAttributes<HTMLDivElement> { };
 
 export interface EmptyPlaceholderIconProps extends Partial<React.SVGProps<SVGSVGElement>> {
 	name: keyof typeof Icons;
@@ -159,6 +160,39 @@ export interface EmptyPlaceholderIconProps extends Partial<React.SVGProps<SVGSVG
 	| null;
 };
 
-export interface EmptyPlaceholderTitleProps extends React.HTMLAttributes<HTMLHeadingElement> {};
+export interface EmptyPlaceholderTitleProps extends React.HTMLAttributes<HTMLHeadingElement> { };
 
-export interface EmptyPlaceholderDescriptionProps extends React.HTMLAttributes<HTMLParagraphElement> {};
+export interface EmptyPlaceholderDescriptionProps extends React.HTMLAttributes<HTMLParagraphElement> { };
+
+export interface DeleteAccountModalProps {
+	showDeleteAccountModal: boolean;
+	setShowDeleteAccountModal: Dispatch<SetStateAction<boolean>>;
+};
+
+export interface ModalProps {
+	children: React.ReactNode;
+	className?: string;
+	showModal?: boolean;
+	setShowModal?: Dispatch<SetStateAction<boolean>>;
+	onClose?: () => void;
+	desktopOnly?: boolean;
+	preventDefaultClose?: boolean;
+};
+
+export interface SectionColumnsProps {
+	title: string;
+	description?: string;
+	children: React.ReactNode;
+};
+
+export interface SkeletonSectionProps {
+	card?: boolean;
+};
+
+export interface BillingInfoProps extends React.HTMLAttributes<HTMLFormElement> {
+	userSubscriptionPlan: UserSubscriptionPlan;
+};
+
+export interface CustomerPortalButtonProps {
+	userStripeId: string;
+};

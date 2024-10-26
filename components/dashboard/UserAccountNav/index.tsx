@@ -98,8 +98,8 @@ const UserAccountNav = () => {
 
                             <li
                                 className="rounded-lg text-foreground hover:bg-muted"
-                                onClick={(event) => {
-                                    event.preventDefault();
+                                onClick={(e) => {
+                                    e.preventDefault();
                                     signOut({
                                         callbackUrl: `${window.location.origin}/`,
                                     });

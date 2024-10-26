@@ -8,6 +8,7 @@ import { getUserByEmail, getUserById } from "@/data/users";
 import { prisma } from "@/lib/prisma";
 import { generateVerificationToken } from "@/lib/tokens";
 import { sendVerificationEmail } from "@/lib/mail";
+import { revalidatePath } from "next/cache";
 
 export const settings = async (values: z.infer<typeof SettingsSchema>) => {
     const user = await currentUser();
@@ -19,9 +20,9 @@ export const settings = async (values: z.infer<typeof SettingsSchema>) => {
     if (!user.id) {
         return { error: "User ID is undefined" };
     }
-    
+
     const dbUser = await getUserById(user.id);
-    
+
     if (!dbUser) {
         return { error: "Unauthorized" };
     }
@@ -72,5 +73,6 @@ export const settings = async (values: z.infer<typeof SettingsSchema>) => {
 
     await prisma.$disconnect();
 
+    revalidatePath("/dashboard/settings");
     return { success: "Settings updated!" };
 };

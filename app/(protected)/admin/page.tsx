@@ -1,8 +1,16 @@
-const AdminPage = () => {
+import DashboardHeader from "@/components/dashboard/Header";
+
+const AdminPage = async () => {
     return (
-        <div>
-            <h1>Admin Page</h1>
-        </div>
+        <>
+            <DashboardHeader
+                heading="Admin Panel"
+                text="Access only for users with ADMIN role."
+            />
+            <div className="flex flex-col gap-5">
+                Hello, Admin!
+            </div>
+        </>
     );
 };
 
