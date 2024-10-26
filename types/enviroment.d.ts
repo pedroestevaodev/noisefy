@@ -11,7 +11,8 @@ namespace NodeJS {
         CLOUDINARY_CLOUD_NAME: string;
         CLOUDINARY_API_KEY: string;
         CLOUDINARY_API_SECRET: string;
-        STRAPI_API_KEY: string;
+        STRIPE_PUBLISHABLE_KEY: string;
+        STRIPE_SECRET_KEY: string;
         STRIPE_WEBHOOK_SECRET: string;
         STRIPE_PRO_MONTHLY_PLAN_ID: string;
         STRIPE_PRO_YEARLY_PLAN_ID: string;
