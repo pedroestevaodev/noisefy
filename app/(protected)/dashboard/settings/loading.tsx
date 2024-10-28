@@ -1,7 +1,7 @@
 import SkeletonSection from "@/components/common/SkeletonSection";
 import DashboardHeader from "@/components/dashboard/Header";
 
-export default function DashboardSettingsLoading() {
+const DashboardSettingsLoading = () => {
 	return (
 		<>
 			<DashboardHeader
@@ -15,4 +15,6 @@ export default function DashboardSettingsLoading() {
 			</div>
 		</>
 	);
-}
+};
+
+export default DashboardSettingsLoading;

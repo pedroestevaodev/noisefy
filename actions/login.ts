@@ -78,8 +78,6 @@ export const login = async (values: z.infer<typeof LoginSchema>, callbackUrl?: s
                 },
             });
 
-            await prisma.$disconnect();
-
             // return { success: "Two-factor authentication successful!" };
         } else {
             const twoFactorToken = await generateTwoFactorToken(existingUser.email);

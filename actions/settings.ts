@@ -71,8 +71,6 @@ export const settings = async (values: z.infer<typeof SettingsSchema>) => {
         },
     });
 
-    await prisma.$disconnect();
-
     revalidatePath("/dashboard/settings");
     return { success: "Settings updated!" };
 };

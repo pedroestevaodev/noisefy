@@ -19,7 +19,7 @@ import { FormError } from "@/components/common/FormError";
 import { FormSuccess } from "@/components/common/FormSuccess";
 import { Button } from "@/components/ui/button";
 
-export default async function SettingsPage() {
+const SettingsPage = () => {
 	const user = useCurrentUser();
 	const { update } = useSession();
 
@@ -214,4 +214,6 @@ export default async function SettingsPage() {
 			</div>
 		</>
 	);
-}
+};
+
+export default SettingsPage;
