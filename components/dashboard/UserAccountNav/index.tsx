@@ -1,35 +1,41 @@
 'use client';
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import { Drawer, DrawerContent, DrawerOverlay, DrawerPortal, DrawerTrigger } from "@/components/ui/drawer";
-import useCurrentUser from "@/hooks/useCurrentUser";
 import Link from "next/link";
 import { LayoutDashboard, Lock, LogOut, Settings } from "lucide-react";
 import UserAvatar from "../UserAvatar";
-import { signOut } from "next-auth/react";
+import { getSession, signOut, useSession } from "next-auth/react";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 
 const UserAccountNav = () => {
-    const user = useCurrentUser();
+    const { data: session, status } = useSession();
+    const user = session?.user;
 
     const [open, setOpen] = useState<boolean>(false);
     const closeDrawer = () => setOpen(false);
 
     const { isMobile } = useMediaQuery();
 
-    // if (!user) {
-    //     return (
-    //         <div className="size-8 animate-pulse rounded-full border bg-muted" />
-    //     );
-    // }
+    useEffect(() => {
+        if (status === 'unauthenticated') {
+            getSession();
+        }
+    }, [status]);
+
+    if (!user) {
+        return (
+            <div className="size-8 animate-pulse rounded-full border bg-muted" />
+        );
+    }
 
     if (isMobile) {
         return (
             <Drawer open={open} onClose={closeDrawer}>
                 <DrawerTrigger onClick={() => setOpen(true)}>
                     <UserAvatar
-                        user={{ name: user?.name || null, image: user?.image || null }}
+                        user={{ name: user.name || null, image: user.image || null }}
                         className="size-9 border"
                     />
                 </DrawerTrigger>
@@ -45,8 +51,8 @@ const UserAccountNav = () => {
 
                         <div className="flex items-center justify-start gap-2 p-2">
                             <div className="flex flex-col">
-                                {user?.name && <p className="font-medium">{user.name}</p>}
-                                {user?.email && (
+                                {user.name && <p className="font-medium">{user.name}</p>}
+                                {user.email && (
                                     <p className="w-[200px] truncate text-muted-foreground">
                                         {user.email}
                                     </p>
@@ -55,7 +61,7 @@ const UserAccountNav = () => {
                         </div>
 
                         <ul role="list" className="mb-14 mt-1 w-full text-muted-foreground">
-                            {user?.role === "ADMIN" ? (
+                            {user.role === "ADMIN" ? (
                                 <li className="rounded-lg text-foreground hover:bg-muted">
                                     <Link
                                         href="/admin"
@@ -92,8 +98,8 @@ const UserAccountNav = () => {
 
                             <li
                                 className="rounded-lg text-foreground hover:bg-muted"
-                                onClick={(event) => {
-                                    event.preventDefault();
+                                onClick={(e) => {
+                                    e.preventDefault();
                                     signOut({
                                         callbackUrl: `${window.location.origin}/`,
                                     });
@@ -116,15 +122,15 @@ const UserAccountNav = () => {
         <DropdownMenu open={open} onOpenChange={setOpen}>
             <DropdownMenuTrigger>
                 <UserAvatar
-                    user={{ name: user?.name || null, image: user?.image || null }}
+                    user={{ name: user.name || null, image: user.image || null }}
                     className="size-8 border"
                 />
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
                 <div className="flex items-center justify-start gap-2 p-2">
                     <div className="flex flex-col space-y-1 leading-none">
-                        {user?.name && <p className="font-medium">{user.name}</p>}
-                        {user?.email && (
+                        {user.name && <p className="font-medium">{user.name}</p>}
+                        {user.email && (
                             <p className="w-[200px] truncate text-sm text-muted-foreground">
                                 {user?.email}
                             </p>
@@ -133,7 +139,7 @@ const UserAccountNav = () => {
                 </div>
                 <DropdownMenuSeparator />
 
-                {user?.role === "ADMIN" ? (
+                {user.role === "ADMIN" ? (
                     <DropdownMenuItem asChild>
                         <Link href="/admin" className="flex items-center space-x-2.5">
                             <Lock className="size-4" />

@@ -24,10 +24,10 @@ export interface ErrorPageProps {
 
 export type SWRDataType<T = any> = {
 	limit: number;
-    page: number;
-    results: T[];
-    total: number;
-    totalPages: number;
+	page: number;
+	results: T[];
+	total: number;
+	totalPages: number;
 };
 
 export type SiteConfig = typeof siteConfig;
@@ -40,4 +40,9 @@ export type UploadImageProps<T extends FieldValues = any> = {
 	setValue?: UseFormSetValue<T>;
 	setImagePreview?: Dispatch<SetStateAction<string | null>>;
 	fieldName?: string;
+};
+
+export type responseAction = {
+	status: "success" | "error";
+	stripeUrl?: string;
 };

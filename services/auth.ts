@@ -51,8 +51,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
                     emailVerified: new Date(),
                 },
             });
-
-            await prisma.$disconnect();
         }
     },
     callbacks: {
@@ -74,8 +72,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
                         id: twoFactorConfirmation.id,
                     },
                 });
-
-                await prisma.$disconnect();
             }
 
             return true;

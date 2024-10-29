@@ -26,4 +26,17 @@ export const nFormatter = (num: number, digits?: number) => {
 	return item
 		? (num / item.value).toFixed(digits || 1).replace(rx, "$1") + item.symbol
 		: "0";
-}
+};
+
+export function formatDate(input: string | number): string {
+	const date = new Date(input);
+	return date.toLocaleDateString("en-US", {
+		month: "long",
+		day: "numeric",
+		year: "numeric",
+	});
+};
+
+export function absoluteUrl(path: string) {
+	return `${process.env.NEXT_PUBLIC_APP_URL}${path}`;
+};

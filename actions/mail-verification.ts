@@ -40,7 +40,5 @@ export const verification = async (token: string) => {
         },
     });
 
-    await prisma.$disconnect();
-
     return { success: "Email verified!" };
 };
