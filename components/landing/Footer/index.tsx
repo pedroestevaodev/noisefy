@@ -9,19 +9,16 @@ const Footer = ({ className }: HTMLAttributes<HTMLElement>) => {
     return (
         <footer className={cn("border-t", className, "bg-noisefy-400") }>
             <div className="container grid max-w-6xl grid-cols-2 gap-6 md:grid-cols-3">
-                <div className="w-96 h-64 flex border-2 justify-center items-center border-black content-center space-x-14">
-                {footerLinks.map((section) => (
-                    <div key={section.title}>
-                        
-                        <span className="text-sm font-medium text-foreground justify-center content-center  ">
-                            {section.title}
-                        </span>
-                        <div>
-                            teste
-                        </div>
-                        
+            <div className="w-96 h-64 flex border-2 justify-center items-baseline  border-black content-center">
+                <ul className="">
+                    <div className=" text-white flex justify-normal my-8 font-">
+                    <li className="mx-14">| Contato</li>
+                    <li className="mx-14">| Redes Sociais</li>
+                    <li className="mx-14">| Páginas</li>
+                    <li className="mx-14">| Localização</li>
                     </div>
-                ))}
+                   
+                </ul>
                 </div>
             </div>
 

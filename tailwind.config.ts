@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 import plugin from "tailwindcss/plugin";
 import { fontFamily } from "tailwindcss/defaultTheme";
+import { Montserrat } from "next/font/google";
 
 const config: Config = {
 	darkMode: ["class"],
@@ -88,7 +89,8 @@ const config: Config = {
     			sans: ["var(--font-sans)", ...fontFamily.sans],
     			urban: ["var(--font-urban)", ...fontFamily.sans],
     			heading: ["var(--font-heading)", ...fontFamily.sans],
-    			geist: ["var(--font-geist)", ...fontFamily.sans]
+    			geist: ["var(--font-geist)", ...fontFamily.sans],
+				montserrat: ['Montserrat', 'sans-serif']
     		},
     		keyframes: {
     			'accordion-down': {
