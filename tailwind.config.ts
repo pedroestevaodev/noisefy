@@ -15,9 +15,14 @@ const config: Config = {
 	theme: {
     	container: {
     		center: true,
-    		padding: '.8rem'
+    		padding: '.8rem',
     	},
     	extend: {
+			spacing: {
+				'72': '50rem',
+				'84': '60rem',
+				'96': '72rem',
+			  },
     		borderRadius: {
     			circle: '50%',
     			lg: 'var(--radius)',
@@ -25,6 +30,19 @@ const config: Config = {
     			sm: 'calc(var(--radius) - 4px)'
     		},
     		colors: {
+				'noisefy': {
+					50: '#f7f3fd',
+					100: '#ded0f5',
+					200: '#c3aced',
+					300: '#67e8f9',
+					400: '#906ddc',
+					500: '#825fd8',
+					600: '#714cd3',
+					700: '#623fcf',
+					800: '#5131b6',
+					900: '#36226c',
+					950: '1e1433',
+				  },
     			background: 'hsl(var(--background))',
     			foreground: 'hsl(var(--foreground))',
     			card: {
