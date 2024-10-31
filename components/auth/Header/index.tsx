@@ -1,5 +1,6 @@
 import { poppins } from "@/config/fonts";
 import { cn } from "@/lib/utils";
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"></link>
 
 interface HeaderProps {
     label: string;

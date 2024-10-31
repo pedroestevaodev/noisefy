@@ -20,10 +20,9 @@ const config: Config = {
     	},
     	extend: {
 			spacing: {
-				'72': '50rem',
-				'84': '60rem',
-				'96': '72rem',
+				'100': '72rem',
 			  },
+			
     		borderRadius: {
     			circle: '50%',
     			lg: 'var(--radius)',
@@ -92,6 +91,9 @@ const config: Config = {
     			geist: ["var(--font-geist)", ...fontFamily.sans],
 				montserrat: ['Montserrat', 'sans-serif']
     		},
+			fontSize: {
+				'2xl': '1.28rem',
+			},
     		keyframes: {
     			'accordion-down': {
     				from: {
@@ -117,8 +119,6 @@ const config: Config = {
     	},
     },
 	plugins: [
-		require('tailwindcss-animate'),
-		require('@savvywombat/tailwindcss-grid-areas'),
 		plugin(function ({ matchUtilities, theme }) {
 			matchUtilities(
 				{
@@ -152,6 +152,8 @@ const config: Config = {
 				},
 			})
 		}),
+
+	
 	],
 };
 
