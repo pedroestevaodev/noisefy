@@ -1,5 +1,9 @@
 @tailwind base;
 @tailwind components;
+@font-face {
+	font-family: "Roboto-Medium";
+	src: url("/noisefy/public/fonts/Roboto-Medium.ttf") format("ttf");
+}
 @tailwind utilities;
 
 @layer utilities {

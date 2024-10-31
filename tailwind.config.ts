@@ -21,6 +21,7 @@ const config: Config = {
     	extend: {
 			spacing: {
 				'100': '72rem',
+				'98': '68rem'
 			  },
 			
     		borderRadius: {
@@ -89,7 +90,7 @@ const config: Config = {
     			urban: ["var(--font-urban)", ...fontFamily.sans],
     			heading: ["var(--font-heading)", ...fontFamily.sans],
     			geist: ["var(--font-geist)", ...fontFamily.sans],
-				montserrat: ['Montserrat', 'sans-serif']
+				'roboto': ['Roboto']
     		},
 			fontSize: {
 				'2xl': '1.28rem',
