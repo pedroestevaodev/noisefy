@@ -16,7 +16,7 @@ const Navbar = ({ scroll = false, large = false }: LandingNavbarProps) => {
     const { data: session, status } = useSession();
 
     return (
-        <header className={`flex items-center justify-around py-3 sticky top-0 gap-x-96 bg-noisefy-500`}>
+        <header className={`flex items-center justify-around py-3 top-0 gap-x-96 bg-noisefy-500`}>
             <a href="http://localhost:3000/"><img src="/imgs/logo-white.png" alt="Logo Noisefy" className="w-14 h-auto"/></a>
             <div>
                 {session ? (

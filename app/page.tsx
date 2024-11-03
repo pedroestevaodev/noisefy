@@ -2,6 +2,7 @@ import Footer from "@/components/landing/Footer";
 import Hero from "@/components/landing/Hero";
 import Navbar from "@/components/landing/Navbar";
 import NavbarMobile from "@/components/landing/NavbarMobile";
+import Valores from "@/components/landing/Valores";
 import FAQ from "@/components/landing/FAQ";
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
 			<Navbar scroll />
 			<main className="flex-1">
 				<Hero />
+				<Valores />
 			</main>
 			<FAQ/>
 			<Footer />
