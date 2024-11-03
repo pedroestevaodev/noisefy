@@ -28,9 +28,6 @@ const Footer = ({ className }: HTMLAttributes<HTMLElement>) => {
             </div>
                 
             </div>
-
-            
-        
         </footer>
     );
 };

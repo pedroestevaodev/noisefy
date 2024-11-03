@@ -4,7 +4,7 @@ import clsx from "clsx";
 import Providers from "@/components/Providers";
 import { siteConfig } from "@/config/site";
 import { ChildrenProps } from "@/types/nextjs";
-import { fontGeist, fontHeading, fontSans, fontUrban } from "@/config/fonts";
+import { fontGeist, fontHeading, fontSans, fontUrban,  fontMontserrat} from "@/config/fonts";
 
 export const metadata: Metadata = siteConfig;
 
@@ -22,11 +22,8 @@ const RootLayout = ({
 		<html suppressHydrationWarning lang="pt-BR">
 			<body
 				className={clsx(
-					"min-h-screen bg-background font-sans antialiased",
-					fontSans.variable,
-					fontUrban.variable,
-					fontHeading.variable,
-					fontGeist.variable,
+					"min-h-screen bg-background antialiased",
+					fontMontserrat.className,
 				)}
 			>
 				<Providers>

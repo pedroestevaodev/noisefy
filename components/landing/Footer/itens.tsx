@@ -17,16 +17,16 @@ type ItensProps = {
 }
 const Itens: React.FC<ItensProps> = ({item, quant, link}) =>{
 
-    const listItens = Array.from({ length: quant }, (_, index) => (
-        <li className="my-3 hover:text-noisefy-100 cursor-pointer" key={index}>{<a href={link[index]}>{item[index]}</a>} </li>
-      ));
+const listItens = Array.from({ length: quant }, (_, index) => (
+    <li className="my-3 hover:text-noisefy-100 cursor-pointer" key={index}>{<a href={link[index]}>{item[index]}</a>} </li>
+  ));
 
-      return(
-        <ul className="text-xs font-normal ">
-            {listItens}
-        </ul>
-        
-      );
+  return(
+    <ul className="text-xs font-normal ">
+        {listItens}
+    </ul>
+    
+  );
 }
 
 export default Itens;

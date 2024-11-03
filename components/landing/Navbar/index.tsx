@@ -16,56 +16,42 @@ const Navbar = ({ scroll = false, large = false }: LandingNavbarProps) => {
     const { data: session, status } = useSession();
 
     return (
-        <header
-            className={`sticky top-0 z-40 flex w-full justify-center bg-background/60 backdrop-blur-xl transition-all 
-                ${scroll ? (scrolled ? "border-b" : "bg-transparent") : "border-b"
-            }`}
-        >
-            <MaxWidthWrapper className="flex h-14 items-center justify-between py-4">
-                <div className="flex gap-6 md:gap-10">
-                    <Link href="/" className="flex items-center space-x-1.5">
-                        <Icons.logo />
-                        <span className="font-urban text-xl font-bold">
-                            {(siteConfig.title as DefaultTemplateString).default ?? ''}
-                        </span>
+        <header className={`flex items-center justify-around py-3 sticky top-0 gap-x-96 bg-noisefy-500`}>
+            <a href="http://localhost:3000/"><img src="/imgs/logo-white.png" alt="Logo Noisefy" className="w-14 h-auto"/></a>
+            <div>
+                {session ? (
+                    <Link
+                        href={session.user.role === "ADMIN" ? "/admin" : "/dashboard"}
+                        className="hidden md:block"
+                    >
+                        <Button
+                            className="bg-white w-40 h-10 rounded-3xl shadow-xl transition transform hover:scale-95 duration-500"
+                            variant="default"
+                            // size="lg"
+                            rounded="full"
+                        >
+                            <span className= "text-noisefy-900 font-medium text-base text-center">Dashboard</span>
+                        </Button>
                     </Link>
-                </div>
-
-                <div className="flex items-center space-x-3">
-                    {session ? (
-                        <Link
-                            href={session.user.role === "ADMIN" ? "/admin" : "/dashboard"}
-                            className="hidden md:block"
+                ) : status === "unauthenticated" ? (
+                    <Link 
+                        href={"/login"}
+                        className="hidden md:block"
+                    >
+                        <Button
+                            className="bg-white w-40 h-10 rounded-3xl shadow-xl transition transform hover:scale-95 duration-500"
+                            variant="default"
+                            // size="sm"
+                            rounded="full"
                         >
-                            <Button
-                                className="gap-2 px-5"
-                                variant="default"
-                                // size="lg"
-                                rounded="full"
-                            >
-                                <span>Dashboard</span>
-                            </Button>
-                        </Link>
-                    ) : status === "unauthenticated" ? (
-                        <Link 
-                            href={`/login`}
-                            className="hidden md:block"
-                        >
-                            <Button
-                                className="flex gap-2 px-5"
-                                variant="default"
-                                // size="sm"
-                                rounded="full"
-                            >
-                                <span>Sign In</span>
-                                <Icons.arrowRight className="size-4" />
-                            </Button>
-                        </Link>
-                    ) : (
-                        <Skeleton className="hidden h-9 w-28 rounded-full lg:flex" />
-                    )}
-                </div>
-            </MaxWidthWrapper>
+                            <span className= "text-noisefy-900 font-medium text-base text-center">Logar</span>
+                            <Icons.arrowRight className="size-4" />
+                        </Button>
+                    </Link>
+                ) : (
+                    <Skeleton className="hidden h-9 w-28 rounded-full lg:flex" />
+                )}
+            </div>
         </header>
     );
 };
