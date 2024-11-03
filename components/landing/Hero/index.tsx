@@ -6,9 +6,9 @@ import Link from "next/link";
 
 const Hero = () => {
     return (
-        <section className="flex justify-center flex-col items-center">
-            <h1 className="text-black text-center font-extrabold tracking-wide text-6xl">Noisefy</h1>
-            <img src="/imgs/img-hero.png" alt="Imagen Noisefy" className=""/>
+        <section className="flex justify-center flex-col items-center pt-12">
+            <h1 className="text-black text-center font-extrabold tracking-wide text-6xl pb-4">Noisefy</h1>
+            <img src="/imgs/img-hero.png" alt="Imagen Noisefy" className="w-2/4 h-auto"/>
             <p className="leading-9 tracking-wide max-w-screen-md text-xl text-center text-noisefy-900">Noisefy oferece soluções avançadas para tratamento e análise de imagens, como conversão de cores, pré-processamento, histogramas, limiarização, e galeria integrada. Tudo isso de forma rápida e eficaz, utilizando o poderoso pacote sharp.</p>
         </section>
     );
