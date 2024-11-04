@@ -1,79 +1,32 @@
-import Icons from "@/components/common/Icons";
-import ModeToggle from "@/components/common/ModeToggle";
-import { footerLinks, socialLinks } from "@/config/site";
 import { cn } from "@/lib/utils";
-import Link from "next/link";
 import { HTMLAttributes } from "react";
+import Itens from './itens';
 
 const Footer = ({ className }: HTMLAttributes<HTMLElement>) => {
     return (
-        <footer className={cn("border-t", className)}>
-            <div className="container grid max-w-6xl grid-cols-2 gap-6 py-14 md:grid-cols-3">
-                {footerLinks.map((section) => (
-                    <div key={section.title}>
-                        <span className="text-sm font-medium text-foreground">
-                            {section.title}
-                        </span>
-                        <ul className="mt-4 list-inside space-y-3">
-                            {section.items?.map((link) => (
-                                <li key={link.title}>
-                                    <Link
-                                        href={link.href}
-                                        className="text-sm text-muted-foreground hover:text-primary"
-                                    >
-                                        {link.title}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
+        <footer className={cn("border-t", className, "bg-noisefy-500", "h-96") }>
+            <div className="container grid max-w-6xl grid-cols-2 gap-6 md:grid-cols-3">
+            <div className="w-100 h-64 flex justify-center items-baseline content-center font-roboto">
+                <ul className="">
+                    <div className="text-white flex justify-normal my-8 text-xl font-semibold cursor-default">
+                    <li className="mx-14 ">| Contato <Itens item={['emailsuporte@noisefy.com', '+55 16 99178-4589']} quant={2} link={['#', '#']} /></li>
+                    <li className="mx-14">| Redes Sociais <Itens item={['Instagram', 'Facebook', 'NewsLetter']} quant={3} link={['#', '#', '#']} /></li>
+                    <li className="mx-14">| Páginas <Itens item={['Home', 'Histogram', 'Img Color Convert', 'Thresholding', 'Pré-processing', 'Galeria']} quant={6} link={['#', '#', '#', '#', '#', '#']} /></li>
+                    <li className="mx-14">| Localização <Itens item={['Rua José Curvelo', '14026-240 - n°110', 'Ribeirão Preto, São Paulo']} quant={3} link={['#', '#', '#']} /></li>
                     </div>
-                ))}
+                </ul>
+
             </div>
 
-            <div className="border-t py-4">
-                <div className="container flex max-w-6xl items-center justify-between">
-                    <p className="text-left text-sm text-muted-foreground">
-                        Built by{" "}
-                        <Link
-                            href={`#`}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="font-medium underline underline-offset-4"
-                        >
-                            mickasmt
-                        </Link>
-                        . Hosted on{" "}
-                        <Link
-                            href="https://vercel.com"
-                            target="_blank"
-                            rel="noreferrer"
-                            className="font-medium underline underline-offset-4"
-                        >
-                            Vercel
-                        </Link>
-                        . Illustrations by{" "}
-                        <Link
-                            href="https://popsy.co"
-                            target="_blank"
-                            rel="noreferrer"
-                            className="font-medium underline underline-offset-4"
-                        >
-                            Popsy
-                        </Link>
-                    </p>
-
-                    <div className="flex items-center gap-3">
-                        <Link
-                            href={socialLinks.github}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="font-medium underline underline-offset-4"
-                        >
-                            <Icons.gitHub className="size-5" />
-                        </Link>
-                        <ModeToggle />
-                    </div>
-                </div>
+            <div className="text-white text-bold -mx-96 my-2 mt-64 h-20 content-end justify-center font-roboto items-baseline w-100 text-center cursor-default">
+                <p>
+                Desenvolvido por Caio Caminitti | Sergio Caminitti | Pedro Estevão | Sara Miranda
+                </p>
+                <p>
+                Noisefy 2024 @ Todos os direitos resevados
+                </p>
+            </div>
+                
             </div>
         </footer>
     );

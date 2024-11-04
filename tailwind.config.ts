@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 import plugin from "tailwindcss/plugin";
 import { fontFamily } from "tailwindcss/defaultTheme";
+import { Montserrat } from "next/font/google";
 
 const config: Config = {
 	darkMode: ["class"],
@@ -15,9 +16,14 @@ const config: Config = {
 	theme: {
     	container: {
     		center: true,
-    		padding: '.8rem'
+    		padding: '.8rem',
     	},
     	extend: {
+			spacing: {
+				'100': '72rem',
+				'98': '68rem'
+			  },
+			
     		borderRadius: {
     			circle: '50%',
     			lg: 'var(--radius)',
@@ -25,6 +31,19 @@ const config: Config = {
     			sm: 'calc(var(--radius) - 4px)'
     		},
     		colors: {
+				'noisefy': {
+					50: '#f7f3fd',
+					100: '#ded0f5',
+					200: '#c3aced',
+					300: '#67e8f9',
+					400: '#906ddc',
+					500: '#825fd8',
+					600: '#714cd3',
+					700: '#623fcf',
+					800: '#5131b6',
+					900: '#36226c',
+					950: '1e1433',
+				  },
     			background: 'hsl(var(--background))',
     			foreground: 'hsl(var(--foreground))',
     			card: {
@@ -70,8 +89,12 @@ const config: Config = {
     			sans: ["var(--font-sans)", ...fontFamily.sans],
     			urban: ["var(--font-urban)", ...fontFamily.sans],
     			heading: ["var(--font-heading)", ...fontFamily.sans],
-    			geist: ["var(--font-geist)", ...fontFamily.sans]
+    			geist: ["var(--font-geist)", ...fontFamily.sans],
+				'roboto': ['Roboto']
     		},
+			fontSize: {
+				'2xl': '1.28rem',
+			},
     		keyframes: {
     			'accordion-down': {
     				from: {
@@ -97,8 +120,6 @@ const config: Config = {
     	},
     },
 	plugins: [
-		require('tailwindcss-animate'),
-		require('@savvywombat/tailwindcss-grid-areas'),
 		plugin(function ({ matchUtilities, theme }) {
 			matchUtilities(
 				{
@@ -132,6 +153,8 @@ const config: Config = {
 				},
 			})
 		}),
+
+	
 	],
 };
 
