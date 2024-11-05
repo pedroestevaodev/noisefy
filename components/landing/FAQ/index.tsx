@@ -5,13 +5,14 @@ import Box from "./box";
 
 const FAQ = ({ className }: HTMLAttributes<HTMLElement>) => {
     return(
-        <faq>
-        <div className="container w-50 h-96 justify-center items-baseline content-center border-2 border-black">
+        
+        <div className="container w-50 h-97 justify-center items-center content-center border-2 border-black">
+            <p>| FAQ</p>
+            <Box/>
+            <Box/>
         </div>
         
-        <div className="container w-50 h-96 justify-center items-baseline content-center border-2 border-black">
-        </div>
-        </faq>
+    
     );
 };
 
