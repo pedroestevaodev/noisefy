@@ -4,6 +4,7 @@ import Navbar from "@/components/landing/Navbar";
 import NavbarMobile from "@/components/landing/NavbarMobile";
 import Valores from "@/components/landing/Valores";
 import FAQ from "@/components/landing/FAQ";
+import ProcessImgsRed from "@/components/landing/ProcessImgsRed";
 
 export default function Home() {
 	return (
@@ -12,6 +13,7 @@ export default function Home() {
 			<Navbar scroll />
 			<main className="flex-1">
 				<Hero />
+				<ProcessImgsRed />
 				<Valores />
 			</main>
 			<FAQ/>
