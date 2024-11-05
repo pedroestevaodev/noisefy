@@ -20,12 +20,12 @@ const Navbar = ({ scroll = false, large = false }: LandingNavbarProps) => {
             <a href="http://localhost:3000/"><img src="/imgs/logo-white.png" alt="Logo Noisefy" className="w-14 h-auto"/></a>
             <div>
                 {session ? (
-                    <Link
-                        href={session.user.role === "ADMIN" ? "/admin" : "/dashboard"}
-                        className="hidden md:block"
-                    >
-                        <Button
-                            className="bg-white w-40 h-10 rounded-3xl shadow-xl transition transform hover:scale-95 duration-500"
+                <Link
+                    href={session.user.role === "ADMIN" ? "/admin" : "/dashboard"}
+                    className="hidden md:block"
+                >
+                    <Button
+                            className="bg-white w-40 h-10 rounded-3xl shadow-xl transition-transform transform hover:bg-white duration-300 hover:scale-105 active:scale-95"
                             variant="default"
                             // size="lg"
                             rounded="full"
@@ -39,13 +39,13 @@ const Navbar = ({ scroll = false, large = false }: LandingNavbarProps) => {
                         className="hidden md:block"
                     >
                         <Button
-                            className="bg-white w-40 h-10 rounded-3xl shadow-xl transition transform hover:scale-95 duration-500"
+                            className="bg-white w-40 h-10 rounded-3xl shadow-xl transition-transform transform hover:bg-white duration-300 hover:scale-105 active:scale-95"
                             variant="default"
                             // size="sm"
                             rounded="full"
                         >
                             <span className= "text-noisefy-900 font-medium text-base text-center">Logar</span>
-                            <Icons.arrowRight className="size-4" />
+                            <Icons.arrowRight className="size-4 text-noisefy-900" />
                         </Button>
                     </Link>
                 ) : (
