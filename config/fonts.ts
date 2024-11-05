@@ -1,5 +1,11 @@
 import localFont from "next/font/local";
 import { Inter as FontSans, Poppins, Urbanist } from "next/font/google";
+import { Montserrat } from "next/font/google";
+
+export const fontMontserrat = Montserrat({
+	subsets: ["latin"],
+	variable: "--font-montserrat",
+});
 
 export const fontSans = FontSans({
 	subsets: ["latin"],
