@@ -1,0 +1,20 @@
+{
+  "pergunta": [
+    {
+      "titulo": "O que é o Noisefy e para que serve?",
+      "conteudo": "O Noisefy é uma plataforma de tratamento de imagens que oferece uma variedade de ferramentas para recuperar, processar e analisar imagens em grande escala."
+    },
+    {
+      "titulo": "Como funciona a recuperação de imagens?",
+      "conteudo": "A recuperação de imagens no Noisefy permite restaurar ou melhorar imagens degradadas. Utilizamos algoritmos avançados para remover ruídos, melhorar a qualidade visual e garantir que suas imagens sejam otimizadas para o uso desejado."
+    },
+    {
+      "titulo": "O que é a conversão de cores no Noisefy?",
+      "conteudo": "A conversão de cores no Noisefy permite transformar imagens de um espaço de cores para outro, como converter de RGB para escala de cinza ou outros formatos."
+    },
+    {
+      "titulo": "Como funciona o pré-processamento de imagens?",
+      "conteudo": "O pré-processamento no Noisefy envolve a preparação de suas imagens para uma análise mais eficaz. Isso pode incluir redimensionamento, ajuste de cores e remoção de ruídos, tudo feito de forma automatizada para garantir que suas imagens estejam prontas para as próximas etapas de tratamento."
+    }
+  ]
+}
