@@ -1,7 +1,6 @@
 import type { Config } from "tailwindcss";
 import plugin from "tailwindcss/plugin";
 import { fontFamily } from "tailwindcss/defaultTheme";
-import { Montserrat } from "next/font/google";
 
 const config: Config = {
 	darkMode: ["class"],
@@ -153,9 +152,7 @@ const config: Config = {
 					'transform-style': 'preserve-3d',
 				},
 			})
-		}),
-
-	
+		}),	
 	],
 };
 

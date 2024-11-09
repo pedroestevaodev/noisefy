@@ -21,7 +21,7 @@
 		"@auth/prisma-adapter": "^2.7.0",
 		"@fontsource/montserrat": "^5.1.0",
 		"@hookform/resolvers": "^3.9.0",
-		"@prisma/client": "^5.21.1",
+		"@prisma/client": "^5.22.0",
 		"@prisma/extension-accelerate": "^1.2.1",
 		"@radix-ui/react-accordion": "^1.2.1",
 		"@radix-ui/react-avatar": "^1.1.1",
@@ -44,8 +44,8 @@
 		"framer-motion": "^11.11.9",
 		"handlebars": "^4.7.8",
 		"lucide-react": "^0.453.0",
-		"next": "^15.0.0",
-		"next-auth": "^5.0.0-beta.22",
+		"next": "14.2.15",
+		"next-auth": "^5.0.0-beta.25",
 		"next-themes": "^0.3.0",
 		"nodemailer": "^6.9.15",
 		"noisefy": "file:",
@@ -73,7 +73,7 @@
 		"eslint": "^8",
 		"eslint-config-next": "14.2.15",
 		"postcss": "^8",
-		"prisma": "^5.21.1",
+		"prisma": "^5.22.0",
 		"tailwindcss": "^3.4.1",
 		"typescript": "^5"
 	}
