@@ -49,8 +49,8 @@ const RegisterForm = () => {
 
     return (
         <CardWrapper
-            headerLabel="Create an account"
-            backButtonLabel="Already have an account?"
+            headerLabel="Crie uma conta!"
+            backButtonLabel="Você já tem uma conta?"
             backButtonHref="/login"
             showSocial
         >
@@ -65,12 +65,12 @@ const RegisterForm = () => {
                             name="name"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Name</FormLabel>
+                                    <FormLabel>Nome</FormLabel>
                                     <FormControl>
                                         <Input
                                             {...field}
                                             type="text"
-                                            placeholder="John Doe"
+                                            placeholder="Seu nome"
                                             disabled={isPending}
                                         />
                                     </FormControl>
@@ -83,12 +83,12 @@ const RegisterForm = () => {
                             name="email"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Email</FormLabel>
+                                    <FormLabel>E-mail</FormLabel>
                                     <FormControl>
                                         <Input
                                             {...field}
                                             type="email"
-                                            placeholder="john.doe@example.com"
+                                            placeholder="seuemail@example.com"
                                             disabled={isPending}
                                         />
                                     </FormControl>
@@ -101,7 +101,7 @@ const RegisterForm = () => {
                             name="password"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Password</FormLabel>
+                                    <FormLabel>Senha</FormLabel>
                                     <FormControl>
                                         <Input
                                             {...field}
@@ -123,7 +123,7 @@ const RegisterForm = () => {
                         size="lg"
                         disabled={isPending}
                     >
-                        Create an account
+                        Criar conta
                     </Button>
                 </form>
             </Form>

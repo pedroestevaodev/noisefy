@@ -47,8 +47,8 @@ const ForgotPasswordForm = () => {
 
     return (
         <CardWrapper
-            headerLabel="Forgot your password?"
-            backButtonLabel="Back to login"
+            headerLabel="Esqueceu sua senha?"
+            backButtonLabel="Volte para o login"
             backButtonHref="/login"
         >
             <Form {...form}>
@@ -62,12 +62,12 @@ const ForgotPasswordForm = () => {
                             name="email"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Email</FormLabel>
+                                    <FormLabel>E-mail</FormLabel>
                                     <FormControl>
                                         <Input 
                                             {...field}
                                             type="email"
-                                            placeholder="john.doe@example.com"
+                                            placeholder="seuemail@example.com"
                                             disabled={isPending}
                                         />
                                     </FormControl>
@@ -76,16 +76,18 @@ const ForgotPasswordForm = () => {
                             )}
                         />
                     </div>
-                    <FormError message={error} />
-                    <FormSuccess message={success} />
-                    <Button
-                        type="submit"
-                        className="w-full"
-                        size="lg"
-                        disabled={isPending}
-                    >
-                        Send reset email
-                    </Button>
+                    <div className="flex-col justify-center items-end">
+                        <FormError message={error} />
+                        <FormSuccess message={success} />
+                        <Button
+                            type="submit"
+                            className="w-full"
+                            size="lg"
+                            disabled={isPending}
+                        >
+                            Enviar e-mail
+                        </Button>
+                    </div>
                 </form>
             </Form>
         </CardWrapper>
