@@ -21,7 +21,8 @@ const config: Config = {
 			spacing: {
 				'100': '72rem',
 				'97' : '34rem',
-				'98': '48rem'
+				'98' : '36rem',
+				'99': '48rem'
 			  },
 			
     		borderRadius: {
