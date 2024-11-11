@@ -5,7 +5,7 @@ const AuthLayout = ({ children }: ChildrenProps) => {
         <div className="relative flex flex-col bg-[url('/imgs/background-img.png')]">
             <div className="relative flex flex-grow min-h-screen items-center justify-center">
                 <div className="flex h-[35rem]">
-                    <div className=" bg-noisefy-900 w-[33rem] h-auto rounded-s-xl">   
+                    <div className="hidden lg:block bg-noisefy-900 w-[33rem] h-auto rounded-s-xl">   
                         <div className="flex justify-center items-center gap-4 mt-8">
                             <img className="w-[4.2rem] h-[3.5rem] absolute z-0 transform translate-x-[-73px] translate-y-[2px]" src="/imgs/camera-noisefy-purple.png" alt="" />                        
                             <img className="w-[4.2rem] h-[3.5rem] z-10" src="/imgs/camera-noisefy-white.png" alt="" />
