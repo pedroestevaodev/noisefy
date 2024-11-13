@@ -10,8 +10,6 @@ type BoxProps = {
     conteudo2: string
     
 }
-
-
 const Box: React.FC<BoxProps> =({titulo1, titulo2, conteudo1, conteudo2}) => {
 const index = 0;
     return (
@@ -30,10 +28,6 @@ const index = 0;
                 
                 </div>
                 )
-      
-
-    
-
 }
 
 export default Box;

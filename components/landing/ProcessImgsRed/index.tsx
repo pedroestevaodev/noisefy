@@ -15,10 +15,10 @@ function ProcessImgsRed() {
                     <img
                         src="/imgs/icon-ProcessImgRed.png"
                         alt="Ícone de processamento de imagens"
-                        className="w-8 h-8 sm:w-20 sm:h-20 lg:w-16 lg:h-16"
+                        className="w-8 h-8 sm:w-20 sm:h-20 lg:w-16 lg:h-16 mb-1"
                     />
                 </div>
-                    <p className="text-lg">
+                    <p className="text-lg text-justify">
                         A plataforma Noisefy oferece um conjunto robusto de ferramentas para
                         processar imagens de forma escalável. Do ajuste de cores à análise avançada
                         de histogramas, nossa solução proporciona uma experiência fluida para
