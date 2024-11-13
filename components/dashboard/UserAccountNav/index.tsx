@@ -81,7 +81,7 @@ const UserAccountNav = () => {
                                     className="flex w-full items-center gap-3 px-2.5 py-2"
                                 >
                                     <LayoutDashboard className="size-4" />
-                                    <p className="text-sm">Dashboard</p>
+                                    <p className="text-sm">Inicio</p>
                                 </Link>
                             </li>
 
@@ -92,7 +92,7 @@ const UserAccountNav = () => {
                                     className="flex w-full items-center gap-3 px-2.5 py-2"
                                 >
                                     <Settings className="size-4" />
-                                    <p className="text-sm">Settings</p>
+                                    <p className="text-sm">Configurações</p>
                                 </Link>
                             </li>
 
@@ -107,7 +107,7 @@ const UserAccountNav = () => {
                             >
                                 <div className="flex w-full items-center gap-3 px-2.5 py-2">
                                     <LogOut className="size-4" />
-                                    <p className="text-sm">Log out </p>
+                                    <p className="text-sm">Sair</p>
                                 </div>
                             </li>
                         </ul>
@@ -151,7 +151,7 @@ const UserAccountNav = () => {
                 <DropdownMenuItem asChild>
                     <Link href="/dashboard" className="flex items-center space-x-2.5">
                         <LayoutDashboard className="size-4" />
-                        <p className="text-sm">Dashboard</p>
+                        <p className="text-sm">Inicio</p>
                     </Link>
                 </DropdownMenuItem>
 
@@ -161,7 +161,7 @@ const UserAccountNav = () => {
                         className="flex items-center space-x-2.5"
                     >
                         <Settings className="size-4" />
-                        <p className="text-sm">Settings</p>
+                        <p className="text-sm">Configurações</p>
                     </Link>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
@@ -176,7 +176,7 @@ const UserAccountNav = () => {
                 >
                     <div className="flex items-center space-x-2.5">
                         <LogOut className="size-4" />
-                        <p className="text-sm">Log out </p>
+                        <p className="text-sm">Sair</p>
                     </div>
                 </DropdownMenuItem>
             </DropdownMenuContent>

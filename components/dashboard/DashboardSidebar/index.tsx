@@ -32,7 +32,7 @@ const DashboardSidebar = ({ links }: DashboardSidebarProps) => {
 
     return (
         <div className="sticky top-0 h-full">
-            <ScrollArea className="h-full overflow-y-auto border-r">
+            <ScrollArea className="h-full overflow-y-auto border-r bg-noisefy-50">
                 <aside
                     className={cn(
                         isSidebarExpanded ? "w-[220px] xl:w-[260px]" : "w-[68px]",
@@ -42,11 +42,15 @@ const DashboardSidebar = ({ links }: DashboardSidebarProps) => {
                     <div className="flex h-full max-h-screen flex-1 flex-col gap-2">
                         <div className="relative flex h-14 items-center justify-between p-4 lg:h-[60px]">
                             <Link
-                                href="#"
+                            href="#"
                                 className={`relative flex items-center gap-2 text-lg font-semibold z-1 ${isSidebarExpanded ? "opacity-100 w-full" : "opacity-0 w-0"} [transition:opacity_0.2s_ease-in-out,_width_0.2s_ease-in-out]`}
                             >
-                                <Icons.logo className="size-6 min-w-6" />
-                                <span className="font-urban text-xl font-bold">
+                                <img 
+                                    src="/imgs/camera-noisefy-purple.png" 
+                                    alt="Noisefy logo" 
+                                    className="w-9 h-7 min-w-6"
+                                />
+                                <span className="font-urban text-xl font-bold text-noisefy-800">
                                     {(siteConfig.title as DefaultTemplateString).default}
                                 </span>
                             </Link>
@@ -57,15 +61,9 @@ const DashboardSidebar = ({ links }: DashboardSidebarProps) => {
                                 onClick={toggleSidebar}
                             >
                                 {isSidebarExpanded ? (
-                                    <PanelLeftClose
-                                        size={18}
-                                        className="stroke-muted-foreground"
-                                    />
+                                    <img src="/imgs/icon-menu-aberto.png" alt="Close" className="size-5" />
                                 ) : (
-                                    <PanelRightClose
-                                        size={18}
-                                        className="stroke-muted-foreground"
-                                    />
+                                    <img src="/imgs/icon-menu-fechado.png" alt="Close" className="size-5" />
                                 )}
                                 <span className="sr-only">Toggle Sidebar</span>
                             </Button>
@@ -91,9 +89,9 @@ const DashboardSidebar = ({ links }: DashboardSidebarProps) => {
                                                                 key={`link-tooltip-${item.title}`}
                                                                 href={item.disabled ? "#" : item.href}
                                                                 className={cn(
-                                                                    "flex items-center gap-3 rounded-md p-2 text-sm font-medium hover:bg-muted",
+                                                                    "flex items-center gap-3 rounded-md p-2 text-sm font-medium hover:bg-noisefy-100",
                                                                     path === item.href
-                                                                        ? "bg-muted"
+                                                                        ? "bg-noisefy-200"
                                                                         : "text-muted-foreground hover:text-accent-foreground",
                                                                     item.disabled &&
                                                                     "cursor-not-allowed opacity-80 hover:bg-transparent hover:text-muted-foreground",

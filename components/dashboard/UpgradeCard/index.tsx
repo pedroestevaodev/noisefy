@@ -3,15 +3,15 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 
 const UpgradeCard = ({ ...props }) => {
     return (
-        <Card className={`md:max-xl:rounded-none md:max-xl:border-none md:max-xl:shadow-none ${props.className}`}>
+        <Card className={`md:max-xl:rounded-none md:max-xl:border-none md:max-xl:shadow-none bg-noisefy-50 ${props.className}`}>
             <CardHeader className="md:max-xl:px-4">
-                <CardTitle>Upgrade to Pro</CardTitle>
+                <CardTitle>Faça upgrade!</CardTitle>
                 <CardDescription>
-                    Unlock all features and get unlimited access to our support team.
+                    Desbloquei todas funções com o plano Pro e garanta acesso ilimitado com nosso time de suporte.
                 </CardDescription>
             </CardHeader>
             <CardContent className="md:max-xl:px-4">
-                <Button size="sm" className="w-full">
+                <Button size="sm" className="w-full text-sm">
                     Upgrade
                 </Button>
             </CardContent>

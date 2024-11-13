@@ -20,21 +20,20 @@ const DeleteAccountSection = () => {
                 <div className="flex flex-col gap-4 rounded-xl border border-red-400 p-4 dark:border-red-900">
                     <div className="flex flex-col gap-2">
                         <div className="flex items-center gap-2">
-                            <span className="text-[15px] font-medium">Are you sure ?</span>
+                            <span className="text-[15px] font-medium">Você tem certeza ?</span>
 
                             {userPaidPlan ? (
                                 <div className="flex items-center gap-1 rounded-md bg-red-600/10 p-1 pr-2 text-xs font-medium text-red-600 dark:bg-red-500/10 dark:text-red-500">
                                     <div className="m-0.5 rounded-full bg-red-600 p-[3px]">
                                         <Icons.close size={10} className="text-background" />
                                     </div>
-                                    Active Subscription
+                                    Assinatura Ativa
                                 </div>
                             ) : null}
                         </div>
                         <div className="text-balance text-sm text-muted-foreground">
-                            Permanently delete your {(siteConfig.title as DefaultTemplateString).default} account
-                            {userPaidPlan ? " and your subscription" : ""}. This action cannot
-                            be undone - please proceed with caution.
+                            Exclua permanentemente sua conta {(siteConfig.title as DefaultTemplateString).default}
+                            {userPaidPlan ? " e sua assinatura" : ""}. Esta ação não pode ser desfeita - prossiga com cautela.
                         </div>
                     </div>
                     <div className="flex items-center gap-2">
@@ -44,7 +43,7 @@ const DeleteAccountSection = () => {
                             onClick={() => setShowDeleteAccountModal(true)}
                         >
                             <Icons.trash className="mr-2 size-4" />
-                            <span>Delete Account</span>
+                            <span>Excluir conta</span>
                         </Button>
                     </div>
                 </div>

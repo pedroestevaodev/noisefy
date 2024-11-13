@@ -32,7 +32,7 @@ const DashboardLayout = async ({ children }: ChildrenProps) => {
                             <SearchCommand links={filteredLinks} />
                         </div>
 
-                        <ModeToggle />
+                        {/*<ModeToggle />          DESATIVANDO O MODO ESCURO INFELIZMENTE, NÃO TEMOS TEMPO PARA ADIONAR ISSO AGORA         */}
                         <UserAccountNav />
                     </MaxWidthWrapper>
                 </header>
