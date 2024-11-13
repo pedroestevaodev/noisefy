@@ -53,7 +53,7 @@ const SettingsPage = () => {
 					}
 				})
 				.catch(() => {
-					setError("Something went wrong");
+					setError("Algo deu errado");
 				});
 		});
 	};
@@ -61,8 +61,8 @@ const SettingsPage = () => {
 	return (
 		<>
 			<DashboardHeader
-				heading="Settings"
-				text="Manage account and website settings."
+				heading="Configurações"
+				text="Gerenciar configurações de conta e site."
 			/>
 			<div className="divide-y divide-muted pb-10">
 				<Form {...form}>
@@ -76,12 +76,12 @@ const SettingsPage = () => {
 								name="name"
 								render={({ field }) => (
 									<FormItem>
-										<FormLabel>Name</FormLabel>
+										<FormLabel>Nome</FormLabel>
 										<FormControl>
 											<Input
 												{...field}
 												type="text"
-												placeholder="John Doe"
+												placeholder="Seu nome"
 												disabled={isPending}
 											/>
 										</FormControl>
@@ -96,12 +96,12 @@ const SettingsPage = () => {
 										name="email"
 										render={({ field }) => (
 											<FormItem>
-												<FormLabel>Email</FormLabel>
+												<FormLabel>E-mail</FormLabel>
 												<FormControl>
 													<Input
 														{...field}
 														type="email"
-														placeholder="john.doe@example.com"
+														placeholder="seuemail@example.com"
 														disabled={isPending}
 													/>
 												</FormControl>
@@ -114,7 +114,7 @@ const SettingsPage = () => {
 										name="password"
 										render={({ field }) => (
 											<FormItem>
-												<FormLabel>Password</FormLabel>
+												<FormLabel>Senha</FormLabel>
 												<FormControl>
 													<Input
 														{...field}
@@ -132,7 +132,7 @@ const SettingsPage = () => {
 										name="newPassword"
 										render={({ field }) => (
 											<FormItem>
-												<FormLabel>New Password</FormLabel>
+												<FormLabel>Nova Senha</FormLabel>
 												<FormControl>
 													<Input
 														{...field}
@@ -152,7 +152,7 @@ const SettingsPage = () => {
 								name="role"
 								render={({ field }) => (
 									<FormItem>
-										<FormLabel>Role</FormLabel>
+										<FormLabel>Conta</FormLabel>
 										<Select
 											defaultValue={field.value}
 											onValueChange={field.onChange}
@@ -160,7 +160,7 @@ const SettingsPage = () => {
 										>
 											<FormControl>
 												<SelectTrigger>
-													<SelectValue placeholder="Select a role" />
+													<SelectValue placeholder="Selecione a conta" />
 												</SelectTrigger>
 											</FormControl>
 											<SelectContent>
@@ -183,9 +183,9 @@ const SettingsPage = () => {
 									render={({ field }) => (
 										<FormItem className="flex flex-row items-center justify-between rounded-lg border p-3 shadow-sm">
 											<div className="space-y-0.5">
-												<FormLabel>Two Factor Authentication</FormLabel>
+												<FormLabel>Autenticação de dois fatores</FormLabel>
 												<FormDescription>
-													Enable two factor authentication for your account
+													Habilite a autenticação de dois fatores para sua conta
 												</FormDescription>
 											</div>
 											<FormControl>
@@ -206,7 +206,7 @@ const SettingsPage = () => {
 							type="submit"
 							disabled={isPending}
 						>
-							Save
+							Salvar
 						</Button>
 					</form>
 				</Form>

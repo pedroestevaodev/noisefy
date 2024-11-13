@@ -32,12 +32,12 @@ const Header = ({ label }: HeaderProps) => {
                 // Exibe o ícone e o título "Noisefy" para resoluções menores
                 <div className="flex items-center gap-2">
                     <img
-                        src="/imgs/camera-noisefy-purple.png"
+                        src="/imgs/camera-noisefy-black.png"
                         alt="Noisefy Icon"
-                        className="w-12 h-10"
+                        className="w-12 h-12"
                     />
                     <h1 className={cn(
-                        "text-noisefy-800 text-3xl font-extrabold",
+                        "text-black text-3xl font-extrabold",
                         fontMontserrat.className,
                     )}>
                         Noisefy
