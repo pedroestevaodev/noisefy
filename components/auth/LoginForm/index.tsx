@@ -68,8 +68,8 @@ const LoginForm = () => {
 
     return (
         <CardWrapper
-            headerLabel="Welcome Back!"
-            backButtonLabel="Don't have an account?"
+            headerLabel="Bem-vindo!"
+            backButtonLabel="Você ainda não tem uma conta?"
             backButtonHref="/register"
             showSocial
         >
@@ -85,7 +85,7 @@ const LoginForm = () => {
                                 name="code"
                                 render={({ field }) => (
                                     <FormItem>
-                                        <FormLabel>Two Factor Code</FormLabel>
+                                        <FormLabel>Autenticação de dois fatores</FormLabel>
                                         <FormControl>
                                             <Input
                                                 {...field}
@@ -105,12 +105,12 @@ const LoginForm = () => {
                                     name="email"
                                     render={({ field }) => (
                                         <FormItem>
-                                            <FormLabel>Email</FormLabel>
+                                            <FormLabel>E-mail</FormLabel>
                                             <FormControl>
                                                 <Input
                                                     {...field}
                                                     type="email"
-                                                    placeholder="john.doe@example.com"
+                                                    placeholder="seuemail@example.com"
                                                     disabled={isPending}
                                                 />
                                             </FormControl>
@@ -123,7 +123,7 @@ const LoginForm = () => {
                                     name="password"
                                     render={({ field }) => (
                                         <FormItem>
-                                            <FormLabel>Password</FormLabel>
+                                            <FormLabel>Senha</FormLabel>
                                             <FormControl>
                                                 <Input
                                                     {...field}
@@ -136,12 +136,12 @@ const LoginForm = () => {
                                                 size="sm"
                                                 variant="link"
                                                 asChild
-                                                className="px-0 font-normal"
+                                                className="px-0 font-normal rounded-lg"
                                             >
                                                 <Link
                                                     href="/forgot-password"
                                                 >
-                                                    Forgot password?
+                                                    Esqueceu sua senha?
                                                 </Link>
                                             </Button>
                                             <FormMessage />

@@ -122,6 +122,7 @@ const config: Config = {
     	},
     },
 	plugins: [
+		require('tailwindcss-textshadow'),
 		plugin(function ({ matchUtilities, theme }) {
 			matchUtilities(
 				{

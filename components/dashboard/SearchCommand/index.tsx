@@ -42,18 +42,18 @@ const SearchCommand = ({ links }: DashboardSidebarProps) => {
                 onClick={() => setOpen(true)}
             >
                 <span className="inline-flex">
-                    Search
-                    <span className="hidden sm:inline-flex">&nbsp;documentation</span>...
+                    Procure a
+                    <span className="hidden sm:inline-flex">&nbsp;documentação</span>...
                 </span>
-                <kbd className="pointer-events-none absolute right-[0.3rem] top-[0.45rem] hidden h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex">
-                    <span className="text-xs">⌘</span>K
+                <kbd className="pointer-events-none absolute right-[0.3rem] top-[0.45rem] hidden h-5 select-none items-center gap-1 rounded bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex">
+                    <img className="w-4 h-4" src="/imgs/icon-lupa.png" alt="" />
                 </kbd>
             </Button>
 
             <CommandDialog open={open} onOpenChange={setOpen}>
-                <CommandInput placeholder="Type a command or search..." />
+                <CommandInput placeholder="Escolha um comando ou procure..." />
                 <CommandList>
-                    <CommandEmpty>No results found.</CommandEmpty>
+                    <CommandEmpty>Sem resultados</CommandEmpty>
                     {links.map((section) => (
                         <CommandGroup key={section.title} heading={section.title}>
                             {section.items.map((item) => {

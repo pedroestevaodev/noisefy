@@ -4,7 +4,7 @@ import clsx from "clsx";
 import Providers from "@/components/Providers";
 import { siteConfig } from "@/config/site";
 import { ChildrenProps } from "@/types/nextjs";
-import { fontGeist, fontHeading, fontSans, fontUrban,  fontMontserrat} from "@/config/fonts";
+import { fontMontserrat} from "@/config/fonts";
 
 export const metadata: Metadata = siteConfig;
 
@@ -23,7 +23,7 @@ const RootLayout = ({
 			<body
 				className={clsx(
 					"min-h-screen bg-background antialiased",
-					fontMontserrat.className,
+					fontMontserrat.className
 				)}
 			>
 				<Providers>

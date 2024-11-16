@@ -11,11 +11,11 @@ export const sidebarLinks: SidebarNavItem[] = [
                 title: "Admin Panel",
                 authorizeOnly: UserRole.ADMIN,
             },
-            { href: "/dashboard", icon: "dashboard", title: "Dashboard" },
+            { href: "/dashboard", icon: "dashboard", title: "Inicio" },
             {
                 href: "/dashboard/billing",
                 icon: "billing",
-                title: "Billing",
+                title: "Plano",
                 authorizeOnly: UserRole.USER,
             },
             {
@@ -28,7 +28,7 @@ export const sidebarLinks: SidebarNavItem[] = [
             {
                 href: "#/dashboard/posts",
                 icon: "post",
-                title: "User Posts",
+                title: "Post de usuários",
                 authorizeOnly: UserRole.USER,
                 disabled: true,
             },
@@ -37,13 +37,13 @@ export const sidebarLinks: SidebarNavItem[] = [
     {
         title: "OPTIONS",
         items: [
-            { href: "/dashboard/settings", icon: "settings", title: "Settings" },
-            { href: "/", icon: "home", title: "Homepage" },
-            { href: "/docs", icon: "bookOpen", title: "Documentation" },
+            { href: "/dashboard/settings", icon: "settings", title: "Configurações" },
+            { href: "/", icon: "home", title: "Página Inicial" },
+            { href: "/docs", icon: "bookOpen", title: "Documentação" },
             {
                 href: "#",
                 icon: "messages",
-                title: "Support",
+                title: "Suporte",
                 authorizeOnly: UserRole.USER,
                 disabled: true,
             },
