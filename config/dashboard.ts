@@ -5,47 +5,43 @@ export const sidebarLinks: SidebarNavItem[] = [
     {
         title: "MENU",
         items: [
-            {
-                href: "/admin",
-                icon: "laptop",
-                title: "Admin Panel",
-                authorizeOnly: UserRole.ADMIN,
+            { 
+                href: "/dashboard", 
+                icon: "dashboard", 
+                title: "Dashboard" 
             },
-            { href: "/dashboard", icon: "dashboard", title: "Dashboard" },
             {
-                href: "/dashboard/billing",
-                icon: "billing",
-                title: "Billing",
+                href: "/dashboard/studio",
+                icon: "studio",
+                title: "Studio",
                 authorizeOnly: UserRole.USER,
             },
             {
-                href: "/admin/orders",
-                icon: "package",
-                title: "Orders",
-                badge: 2,
-                authorizeOnly: UserRole.ADMIN,
-            },
-            {
-                href: "#/dashboard/posts",
-                icon: "post",
-                title: "User Posts",
+                href: "/dashboard/gallery",
+                icon: "gallery",
+                title: "Galeria",
                 authorizeOnly: UserRole.USER,
-                disabled: true,
-            },
+            }
         ],
     },
     {
         title: "OPTIONS",
         items: [
-            { href: "/dashboard/settings", icon: "settings", title: "Settings" },
-            { href: "/", icon: "home", title: "Homepage" },
-            { href: "/docs", icon: "bookOpen", title: "Documentation" },
+            { 
+                href: "/", 
+                icon: "home", 
+                title: "Home" 
+            },
             {
-                href: "#",
-                icon: "messages",
-                title: "Support",
+                href: "/dashboard/billing",
+                icon: "billing",
+                title: "Pagamento",
                 authorizeOnly: UserRole.USER,
-                disabled: true,
+            },
+            { 
+                href: "/dashboard/settings", 
+                icon: "settings", 
+                title: "Configurações" 
             },
         ],
     },

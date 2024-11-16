@@ -38,9 +38,12 @@ const DashboardLayout = async ({ children }: ChildrenProps) => {
                 </header>
 
                 <main className="flex-1 p-4 xl:px-8">
-                    <MaxWidthWrapper className="flex flex-col gap-4 lg:gap-6 h-full px-0 max-w-7xl">
+                    <div className="flex flex-col gap-4 lg:gap-6 h-full px-0">
+
+                    {/* <MaxWidthWrapper className="flex flex-col gap-4 lg:gap-6 h-full px-0 max-w-7xl"> */}
                         {children}
-                    </MaxWidthWrapper>
+                    {/* </MaxWidthWrapper> */}
+                    </div>
                 </main>
             </div>
         </div>

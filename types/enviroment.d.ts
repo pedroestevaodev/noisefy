@@ -20,6 +20,7 @@ namespace NodeJS {
         STRIPE_BUSINESS_YEARLY_PLAN_ID: string;
         SMTP_EMAIL: string;
         SMTP_PASSOWORD: string;
+        REPLICATE_API_TOKEN: string;
         NODE_ENV: string;
     }
 }
