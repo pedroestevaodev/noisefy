@@ -6,6 +6,7 @@ import Valores from "@/components/landing/Valores";
 import FAQ from "@/components/landing/FAQ";
 import ProcessImgsRed from "@/components/landing/ProcessImgsRed";
 import FuncDoSoftware from "@/components/landing/FuncDoSoftware";
+import HowAre from "@/components/landing/HowAre";
 
 export default function Home() {
 	return (
@@ -18,8 +19,10 @@ export default function Home() {
 				<FuncDoSoftware />
 				<Valores />
 			</main>
+			<HowAre />
 			<FAQ/>
 			<Footer />
+			
 		</div>
 	);
 }

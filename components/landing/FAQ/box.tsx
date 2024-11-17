@@ -20,7 +20,7 @@ const Box: React.FC<BoxProps> =({titulo1, titulo2, conteudo1, conteudo2}) => {
                 <p>{conteudo1}</p>
             </div>
             
-            <div key={index+1}className="ml-6 container w-98 grid inline-block h-48 justify-center items-center content-start inline-block break-all">
+            <div key={index+1}className="ml-6 container w-98 grid inline-block h-48 justify-center items-center content-start break-all">
                 <h3 className="text-noisefy-700 font-bold text-2xl" >{titulo2}</h3>
                 <img src="/imgs/traco-inferior.svg" alt="" />
                 <p>{conteudo2}</p>
