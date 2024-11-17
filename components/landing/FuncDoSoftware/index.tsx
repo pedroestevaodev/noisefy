@@ -1,6 +1,5 @@
 import { cn } from "@/lib/utils";
 import { HTMLAttributes } from "react";
-import Box from "./Ret";
 import perguntasData from '@/public/perguntas.json';
 import React from "react"; 
 import Ret from "./Ret";

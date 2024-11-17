@@ -7,6 +7,7 @@ import FAQ from "@/components/landing/FAQ";
 import ProcessImgsRed from "@/components/landing/ProcessImgsRed";
 import FuncDoSoftware from "@/components/landing/FuncDoSoftware";
 import HowAre from "@/components/landing/HowAre";
+import JuntiseANos from "@/components/landing/JuntiseANos";
 
 export default function Home() {
 	return (
@@ -18,6 +19,7 @@ export default function Home() {
 				<ProcessImgsRed />
 				<FuncDoSoftware />
 				<Valores />
+				<JuntiseANos />
 			</main>
 			<HowAre />
 			<FAQ/>
