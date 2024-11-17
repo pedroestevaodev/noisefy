@@ -19,6 +19,7 @@
 	},
 	"dependencies": {
 		"@auth/prisma-adapter": "^2.7.0",
+		"@bytescale/upload-widget-react": "^4.19.0",
 		"@hookform/resolvers": "^3.9.0",
 		"@prisma/client": "^5.22.0",
 		"@prisma/extension-accelerate": "^1.2.1",
@@ -48,6 +49,7 @@
 		"next-auth": "^5.0.0-beta.25",
 		"next-themes": "^0.3.0",
 		"nodemailer": "^6.9.15",
+		"nsfw-filter": "1.0.2",
 		"nsfwjs": "^4.2.1",
 		"react": "^18",
 		"react-compare-slider": "^3.1.0",

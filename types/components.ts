@@ -196,3 +196,8 @@ export interface BillingInfoProps extends React.HTMLAttributes<HTMLFormElement> 
 export interface CustomerPortalButtonProps {
 	userStripeId: string;
 };
+
+export interface UploadDropZoneProps {
+	setPhotoName: Dispatch<SetStateAction<string>>;
+	setOriginalPhoto: Dispatch<SetStateAction<string>>;
+}

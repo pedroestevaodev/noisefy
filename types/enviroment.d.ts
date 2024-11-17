@@ -21,6 +21,8 @@ namespace NodeJS {
         SMTP_EMAIL: string;
         SMTP_PASSOWORD: string;
         REPLICATE_API_TOKEN: string;
+        REMAINING_RATE_LIMIT: number;
+        REMAINING_RESET_HOUR: number;
         NODE_ENV: string;
     }
 }
