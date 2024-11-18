@@ -10,10 +10,10 @@ const HowAre = ({ className }: HTMLAttributes<HTMLElement>) => {
             | Quem somos nós
         </div>
         <div className="grid grid-cols-4 content-center container">
-            <BoxH/>
-            <BoxH/>
-            <BoxH/>
-            <BoxH/>
+            <BoxH srcS="imgs/caio.svg" name="Caio Caminitti"/>
+            <BoxH srcS="imgs/sergio.svg" name="Sérgio Caminitti"/>
+            <BoxH srcS="imgs/sara.svg" name="Sara Miranda"/>
+            <BoxH srcS="imgs/pedro.svg" name="Pedro Estevão"/>
         </div>
 
         </div>
