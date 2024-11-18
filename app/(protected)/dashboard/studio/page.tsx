@@ -1,10 +1,9 @@
 'use client';
 
-import { StudioOptionsList } from "@/components/dashboard/StudioOptiosList";
-import { StudioView } from "@/components/dashboard/StudioView";
+import { StudioOptionsList } from "@/components/dashboard/studio/StudioOptiosList";
+import { StudioView } from "@/components/dashboard/studio/StudioView";
 
 const StudioPage = () => {
-
     return (
         <>
             <StudioView />

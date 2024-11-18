@@ -14,13 +14,12 @@ export const sidebarLinks: SidebarNavItem[] = [
                 href: "/dashboard/studio",
                 icon: "studio",
                 title: "Studio",
-                authorizeOnly: UserRole.USER,
+                // authorizeOnly: UserRole.ADMIN,
             },
             {
                 href: "/dashboard/gallery",
                 icon: "gallery",
                 title: "Galeria",
-                authorizeOnly: UserRole.USER,
             }
         ],
     },
@@ -36,7 +35,6 @@ export const sidebarLinks: SidebarNavItem[] = [
                 href: "/dashboard/billing",
                 icon: "billing",
                 title: "Pagamento",
-                authorizeOnly: UserRole.USER,
             },
             { 
                 href: "/dashboard/settings", 

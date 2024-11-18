@@ -198,6 +198,17 @@ export interface CustomerPortalButtonProps {
 };
 
 export interface UploadDropZoneProps {
-	setPhotoName: Dispatch<SetStateAction<string>>;
-	setOriginalPhoto: Dispatch<SetStateAction<string>>;
-}
+	setPhotoName: Dispatch<SetStateAction<string | null>>;
+	setOriginalPhoto: Dispatch<SetStateAction<string | null>>;
+};
+
+export interface StudioCompareSliderProps {
+	original: string;
+	restored: string;
+	height: number | undefined;
+};
+
+export interface StudioSideSwitchProps {
+	sideBySide: boolean;
+	setSideBySide: Dispatch<SetStateAction<boolean>>;
+};

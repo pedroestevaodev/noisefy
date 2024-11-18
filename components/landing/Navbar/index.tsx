@@ -34,7 +34,7 @@ const Navbar = ({ scroll = false, large = false }: LandingNavbarProps) => {
                 <div className="flex items-center space-x-3">
                     {session ? (
                         <Link
-                            href={session.user.role === "ADMIN" ? "/admin" : "/dashboard"}
+                            href={`/dashboard`}
                             className="hidden md:block"
                         >
                             <Button
