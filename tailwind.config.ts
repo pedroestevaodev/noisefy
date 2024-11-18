@@ -18,6 +18,10 @@ const config: Config = {
     		padding: '.8rem',
     	},
     	extend: {
+			boxShadow: {
+				'custom-purple': '4px 4px 10px #825FD8',
+			  },
+
 			spacing: {
 				'97' : '34rem',
 				'98' : '36rem',
