@@ -5,6 +5,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import ThemeProvider from "@/components/Providers/ThemeProvider";
 import { Toaster } from "@/components/ui/sonner";
 import { auth } from "@/services/auth";
+import {NextUIProvider} from "@nextui-org/system";
+import StudioProvider from "@/components/Providers/StudioProvider";
 
 const Providers = async ({ children }: ProvidersProps) => {
     const session = await auth();
@@ -17,10 +19,14 @@ const Providers = async ({ children }: ProvidersProps) => {
                 enableSystem
                 disableTransitionOnChange
             >
-                <TooltipProvider delayDuration={0}>
-                    {children}
-                    <Toaster richColors closeButton />
-                </TooltipProvider>
+                <StudioProvider>
+                    <NextUIProvider>
+                        <TooltipProvider delayDuration={0}>
+                            {children}
+                            <Toaster richColors closeButton />
+                        </TooltipProvider>
+                    </NextUIProvider>
+                </StudioProvider>
             </ThemeProvider>
         </SessionProvider>
     );

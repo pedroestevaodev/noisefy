@@ -196,3 +196,19 @@ export interface BillingInfoProps extends React.HTMLAttributes<HTMLFormElement> 
 export interface CustomerPortalButtonProps {
 	userStripeId: string;
 };
+
+export interface UploadDropZoneProps {
+	setPhotoName: Dispatch<SetStateAction<string | null>>;
+	setOriginalPhoto: Dispatch<SetStateAction<string | null>>;
+};
+
+export interface StudioCompareSliderProps {
+	original: string;
+	restored: string;
+	height: number | undefined;
+};
+
+export interface StudioSideSwitchProps {
+	sideBySide: boolean;
+	setSideBySide: Dispatch<SetStateAction<boolean>>;
+};

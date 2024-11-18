@@ -8,7 +8,7 @@ namespace NodeJS {
         NEXT_PUBLIC_APP_URL: string;
         GOOGLE_CLIENT_ID: string;
         GOOGLE_CLIENT_SECRET: string;
-        CLOUDINARY_CLOUD_NAME: string;
+        NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: string;
         CLOUDINARY_API_KEY: string;
         CLOUDINARY_API_SECRET: string;
         STRIPE_PUBLISHABLE_KEY: string;
@@ -20,6 +20,9 @@ namespace NodeJS {
         STRIPE_BUSINESS_YEARLY_PLAN_ID: string;
         SMTP_EMAIL: string;
         SMTP_PASSOWORD: string;
+        NEXT_PUBLIC_REPLICATE_API_TOKEN: string;
+        REMAINING_RATE_LIMIT: string;
+        REMAINING_RESET_HOUR: string;
         NODE_ENV: string;
     }
 }

@@ -21,6 +21,26 @@ const nextConfig = {
 
         return config;
     },
+    images: {
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'images.unsplash.com',
+            },
+            {
+                protocol: 'https',
+                hostname: 'upcdn.io',
+            },
+            {
+                protocol: 'https',
+                hostname: 'replicate.delivery',
+            },
+            {
+                protocol: 'https',
+                hostname: 'lh3.googleusercontent.com',
+            },
+        ],
+    },
 };
 
 export default nextConfig;
