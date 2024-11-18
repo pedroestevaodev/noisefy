@@ -4,6 +4,11 @@ import Navbar from "@/components/landing/Navbar";
 import NavbarMobile from "@/components/landing/NavbarMobile";
 import Valores from "@/components/landing/Valores";
 import FAQ from "@/components/landing/FAQ";
+import ProcessImgsRed from "@/components/landing/ProcessImgsRed";
+import FuncDoSoftware from "@/components/landing/FuncDoSoftware";
+import HowAre from "@/components/landing/HowAre";
+import JuntiseANos from "@/components/landing/JuntiseANos";
+import ImgBeforeAfter from "@/components/landing/ImgBeforeAfter";
 
 export default function Home() {
 	return (
@@ -12,10 +17,16 @@ export default function Home() {
 			<Navbar scroll />
 			<main className="flex-1">
 				<Hero />
+				<ImgBeforeAfter />
+				<ProcessImgsRed />
+				<FuncDoSoftware />
 				<Valores />
+				<JuntiseANos />
 			</main>
+			<HowAre />
 			<FAQ/>
 			<Footer />
+			
 		</div>
 	);
 }

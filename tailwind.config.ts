@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 import plugin from "tailwindcss/plugin";
 import { fontFamily } from "tailwindcss/defaultTheme";
-import { Montserrat } from "next/font/google";
+import { nextui } from "@nextui-org/theme";
 
 const config: Config = {
 	darkMode: ["class"],
@@ -9,6 +9,7 @@ const config: Config = {
 		"./app/**/*.{js,ts,jsx,tsx,mdx}",
 		"./pages/**/*.{js,ts,jsx,tsx,mdx}",
 		"./components/**/*.{js,ts,jsx,tsx,mdx}",
+		"./node_modules/@nextui-org/theme/dist/components/(button|snippet|spinner|code|input).js"
 	],
 	future: {
 		hoverOnlyWhenSupported: true,
@@ -19,9 +20,16 @@ const config: Config = {
     		padding: '.8rem',
     	},
     	extend: {
+			boxShadow: {
+				'custom-purple': '4px 4px 10px #825FD8',
+			  },
+
 			spacing: {
+				'97' : '34rem',
+				'98' : '36rem',
+				'99': '48rem',
 				'100': '72rem',
-				'98': '68rem'
+				'101': '78rem'
 			  },
 			
     		borderRadius: {
@@ -58,10 +66,10 @@ const config: Config = {
     				DEFAULT: 'hsl(var(--primary))',
     				foreground: 'hsl(var(--primary-foreground))'
     			},
-    			secondary: {
-    				DEFAULT: 'hsl(var(--secondary))',
-    				foreground: 'hsl(var(--secondary-foreground))'
-    			},
+    			// secondary: {
+    			// 	DEFAULT: 'hsl(var(--secondary))',
+    			// 	foreground: 'hsl(var(--secondary-foreground))'
+    			// },
     			muted: {
     				DEFAULT: 'hsl(var(--muted))',
     				foreground: 'hsl(var(--muted-foreground))'
@@ -120,6 +128,9 @@ const config: Config = {
     	},
     },
 	plugins: [
+		nextui(),
+		require('tailwindcss-animate'),
+		require('@savvywombat/tailwindcss-grid-areas'),
 		plugin(function ({ matchUtilities, theme }) {
 			matchUtilities(
 				{
@@ -152,9 +163,7 @@ const config: Config = {
 					'transform-style': 'preserve-3d',
 				},
 			})
-		}),
-
-	
+		}),	
 	],
 };
 

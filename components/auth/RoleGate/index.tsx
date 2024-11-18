@@ -14,7 +14,7 @@ const RoleGate = ({ children, allowedRole }: RoleGateProps) => {
 
     if (role !== allowedRole) {
         return (
-            <FormError message="You do not have permission to view this content!" />
+            <FormError message="Você não tem permissão para visualizar este conteúdo!" />
         );
     }
 

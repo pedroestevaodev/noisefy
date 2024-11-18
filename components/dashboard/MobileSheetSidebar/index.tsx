@@ -23,7 +23,7 @@ const MobileSheetSidebar = ({ links }: DashboardSidebarProps) => {
 
     if (isSm || isMobile) {
         return (
-            <Sheet open={open} onOpenChange={setOpen}>
+            <Sheet open={open} onOpenChange={setOpen} >
                 <SheetTrigger asChild>
                     <Button
                         variant="outline"
@@ -42,8 +42,12 @@ const MobileSheetSidebar = ({ links }: DashboardSidebarProps) => {
                                     href="#"
                                     className="flex items-center gap-2 text-lg font-semibold"
                                 >
-                                    <Icons.logo className="size-6" />
-                                    <span className="font-urban text-xl font-bold">
+                                    <img 
+                                    src="/imgs/camera-noisefy-purple.png" 
+                                    alt="Noisefy logo" 
+                                    className="w-9 h-7 min-w-6"
+                                    />
+                                    <span className="font-urban text-xl font-bold text-noisefy-800">
                                         {(siteConfig.title as DefaultTemplateString).default}
                                     </span>
                                 </Link>
@@ -69,9 +73,9 @@ const MobileSheetSidebar = ({ links }: DashboardSidebarProps) => {
                                                             }}
                                                             href={item.disabled ? "#" : item.href}
                                                             className={cn(
-                                                                "flex items-center gap-3 rounded-md p-2 text-sm font-medium hover:bg-muted",
+                                                                "flex items-center gap-3 rounded-md p-2 text-sm font-medium hover:bg-noisefy-100",
                                                                 path === item.href
-                                                                    ? "bg-muted"
+                                                                    ? "bg-noisefy-200"
                                                                     : "text-muted-foreground hover:text-accent-foreground",
                                                                 item.disabled &&
                                                                 "cursor-not-allowed opacity-80 hover:bg-transparent hover:text-muted-foreground",
@@ -104,7 +108,7 @@ const MobileSheetSidebar = ({ links }: DashboardSidebarProps) => {
     }
 
     return (
-        <div className="flex size-9 animate-pulse rounded-lg bg-muted md:hidden" />
+        <div className="flex size-9 animate-pulse rounded-lg bg-noisefy-50 md:hidden" />
     );
 };
 

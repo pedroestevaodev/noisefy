@@ -53,10 +53,11 @@ const DeleteAccountModal = ({
                         image: session?.image || null,
                     }}
                 />
-                <h3 className="text-lg font-semibold">Delete Account</h3>
+                <h3 className="text-lg font-semibold">Excluir conta</h3>
                 <p className="text-center text-sm text-muted-foreground">
-                    <b>Warning:</b> This will permanently delete your account and your
-                    active subscription!
+                    <b>Atenção: </b> 
+                    Isso excluirá permanentemente sua conta e sua
+                    assinatura ativa!
                 </p>
 
                 {/* TODO: Use getUserSubscriptionPlan(session.user.id) to display the user's subscription if he have a paid plan */}
@@ -75,11 +76,11 @@ const DeleteAccountModal = ({
             >
                 <div>
                     <label htmlFor="verification" className="block text-sm">
-                        To verify, type{" "}
+                        Para verificar, digite{" "}
                         <span className="font-semibold text-black dark:text-white">
-                            confirm delete account
+                            confirmar excluir conta
                         </span>{" "}
-                        below
+                        abaixo
                     </label>
                     <Input
                         type="text"
@@ -97,7 +98,7 @@ const DeleteAccountModal = ({
                     variant={deleting ? "disable" : "destructive"}
                     disabled={deleting}
                 >
-                    Confirm delete account
+                    Confirme a exclusão da conta
                 </Button>
             </form>
         </Modal>

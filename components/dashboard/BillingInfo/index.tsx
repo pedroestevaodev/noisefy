@@ -18,9 +18,9 @@ const BillingInfo = ({ userSubscriptionPlan }: BillingInfoProps) => {
     return (
         <Card>
             <CardHeader>
-                <CardTitle>Subscription Plan</CardTitle>
+                <CardTitle>Plano de Assinatura</CardTitle>
                 <CardDescription>
-                    You are currently on the <strong>{title}</strong> plan.
+                    Você está atualmente no plano <strong>{title}</strong>.
                 </CardDescription>
             </CardHeader>
             <CardContent>{description}</CardContent>
@@ -38,7 +38,7 @@ const BillingInfo = ({ userSubscriptionPlan }: BillingInfoProps) => {
                     <CustomerPortalButton userStripeId={stripeCustomerId} />
                 ) : (
                     <Link href="/pricing" className={cn(buttonVariants())}>
-                        Choose a plan
+                        Escolha um plano
                     </Link>
                 )}
             </CardFooter>

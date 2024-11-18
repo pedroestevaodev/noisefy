@@ -14,17 +14,17 @@ export const settings = async (values: z.infer<typeof SettingsSchema>) => {
     const user = await currentUser();
 
     if (!user) {
-        return { error: "Unauthorized" };
+        return { error: "Não autorizado" };
     }
 
     if (!user.id) {
-        return { error: "User ID is undefined" };
+        return { error: "ID de usuário está indefinido" };
     }
 
     const dbUser = await getUserById(user.id);
 
     if (!dbUser) {
-        return { error: "Unauthorized" };
+        return { error: "Não autorizado" };
     }
 
     if (user.isOAuth) {
@@ -38,7 +38,7 @@ export const settings = async (values: z.infer<typeof SettingsSchema>) => {
         const existingUser = await getUserByEmail(values.email);
 
         if (existingUser && existingUser.id !== user.id) {
-            return { error: "Email already exists" };
+            return { error: "E-mail existente" };
         }
 
         const verificationToken = await generateVerificationToken(values.email);
@@ -49,14 +49,14 @@ export const settings = async (values: z.infer<typeof SettingsSchema>) => {
             token: verificationToken.token
         });
 
-        return { success: "Verification email sent!" };
+        return { success: "Verificação de e-mail enviada!" };
     }
 
     if (values.password && values.newPassword && dbUser.password) {
         const passwordMatch = await bcrypt.compare(values.password, dbUser.password);
 
         if (!passwordMatch) {
-            return { error: "Invalid password" };
+            return { error: "Senha invalida" };
         }
 
         const hashedPassword = await bcrypt.hash(values.newPassword, 10);
@@ -72,5 +72,5 @@ export const settings = async (values: z.infer<typeof SettingsSchema>) => {
     });
 
     revalidatePath("/dashboard/settings");
-    return { success: "Settings updated!" };
+    return { success: "Configurações atualizadas!" };
 };

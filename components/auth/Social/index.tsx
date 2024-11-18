@@ -20,15 +20,6 @@ const Social = () => {
             >
                 <FcGoogle className="w-5 h-5" />
             </Button>
-
-            <Button
-                size="lg"
-                className="w-full"
-                variant="outline"
-                onClick={() => loginProviders("github", callbackUrl)}
-            >
-                <FaGithub className="w-5 h-5" />
-            </Button>
         </div>
     );
 };

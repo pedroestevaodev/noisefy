@@ -32,10 +32,12 @@ model User {
     isTwoFactorEnabled Boolean @default(false)
     twoFactorConfirmation TwoFactorConfirmation?
 
+    rateLimit RateLimit?
+
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
 
-    Gallery Gallery[]
+    gallery Gallery[]
 }
 
 model Account {
@@ -97,6 +99,15 @@ model TwoFactorToken {
 model TwoFactorConfirmation {
     id        String    @id @default(cuid())
     userId    String    @unique
+
+    user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model RateLimit {
+    id        String   @id @default(cuid())
+    userId    String   @unique
+    count     Int      @default(0)
+    resetAt   DateTime
 
     user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }

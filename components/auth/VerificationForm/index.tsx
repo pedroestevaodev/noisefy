@@ -20,7 +20,7 @@ export const VerificationForm = () => {
         if (success || error) return;
 
         if (!token) {
-            setError("Missing token!");
+            setError("Código ausente!");
             return;
         };
 
@@ -28,7 +28,7 @@ export const VerificationForm = () => {
             setSuccess(data.success);
             setError(data.error);
         }).catch((error) => {
-            setError("Something went wrong!");
+            setError("Algo deu errado!");
         });
     }, [token, success, error]);
 
@@ -38,8 +38,8 @@ export const VerificationForm = () => {
 
     return (
         <CardWrapper
-            headerLabel="Confirming your email"
-            backButtonLabel="Back to login"
+            headerLabel="Confirme seu e-mail"
+            backButtonLabel="Volte para o login"
             backButtonHref="/login"
         >
             <div className="flex flex-col items-center justify-center w-full">
