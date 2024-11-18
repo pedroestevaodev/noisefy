@@ -21,7 +21,7 @@ const config: Config = {
     	},
     	extend: {
 			boxShadow: {
-				'custom-purple': '4px 4px 10px #825FD8',
+				'custom-purple': '6px 6px 5px #825FD8',
 			  },
 
 			spacing: {
@@ -39,6 +39,9 @@ const config: Config = {
     			sm: 'calc(var(--radius) - 4px)'
     		},
     		colors: {
+				'verde':{
+					100: '#3CD3C1'
+				},
 				'noisefy': {
 					50: '#f7f3fd',
 					100: '#ded0f5',
