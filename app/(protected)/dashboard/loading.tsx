@@ -4,7 +4,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 const DashboardLoading = () => {
     return (
         <>
-            <DashboardHeader heading="Dashboard" text="Current Role:" />
+            {/* <DashboardHeader heading="Dashboard" text="Current Role:" /> */}
             <Skeleton className="size-full rounded-lg" />
         </>
     );

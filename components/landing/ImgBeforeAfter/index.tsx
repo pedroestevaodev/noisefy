@@ -9,7 +9,7 @@ function ImgBeforeAfter() {
     const [currentBeforeImage, setCurrentBeforeImage] = useState("/imgs/img-teste3.jpg"); // Imagem principal "before"
     const [currentAfterImage, setCurrentAfterImage] = useState("/imgs/img-teste3-after.jpg"); // Imagem "after"
 
-    const handleMouseMove = (e: MouseEvent | React.MouseEvent) => {
+    const handleMouseMove = (e: MouseEvent | React.MouseEvent | Touch) => {
         if (!isDragging) return;
 
         const container = containerRef.current;
@@ -24,7 +24,7 @@ function ImgBeforeAfter() {
 
     const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
         if (e.touches && e.touches[0] && isDragging) {
-            handleMouseMove(e.touches[0]);
+            handleMouseMove(e.touches[0] as Touch);
         }
     };
 

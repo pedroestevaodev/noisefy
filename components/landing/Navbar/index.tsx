@@ -21,7 +21,7 @@ const Navbar = ({ scroll = false, large = false }: LandingNavbarProps) => {
             <div>
                 {session ? (
                 <Link
-                    href={session.user.role === "ADMIN" ? "/admin" : "/dashboard"}
+                    href={"/dashboard"}
                     className="hidden md:block"
                 >
                     <Button
