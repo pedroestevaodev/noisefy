@@ -47,18 +47,6 @@ const NavbarMobile = () => {
                 <ul className="grid divide-y divide-muted">
                     {session ? (
                         <>
-                            {session.user.role === "ADMIN" ? (
-                                <li className="py-3">
-                                    <Link
-                                        href="/admin"
-                                        onClick={() => setOpen(false)}
-                                        className="flex w-full font-medium capitalize"
-                                    >
-                                        Admin
-                                    </Link>
-                                </li>
-                            ) : null}
-
                             <li className="py-3">
                                 <Link
                                     href="/dashboard"

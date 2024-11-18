@@ -56,6 +56,7 @@ const Modal = ({
             </Drawer.Root>
         );
     }
+    
     return (
         <Dialog
             open={setShowModal ? showModal : true}

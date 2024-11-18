@@ -13,6 +13,7 @@ import {
     HelpCircle,
     Home,
     Image,
+    Images,
     Laptop,
     LayoutPanelLeft,
     LineChart,
@@ -30,6 +31,7 @@ import {
     SunMedium,
     Trash,
     User,
+    WandSparkles,
     X,
 } from "lucide-react";
 
@@ -46,6 +48,7 @@ const Icons = {
     copy: Copy,
     dashboard: LayoutPanelLeft,
     ellipsis: MoreVertical,
+    gallery: Images,
     gitHub: ({ ...props }: LucideProps) => (
         <svg
             aria-hidden="true"
@@ -111,6 +114,7 @@ const Icons = {
     search: Search,
     settings: Settings,
     spinner: Loader2,
+    studio: WandSparkles,
     sun: SunMedium,
     trash: Trash,
     twitter: ({ ...props }: LucideProps) => (

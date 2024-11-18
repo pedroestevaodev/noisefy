@@ -1,5 +1,5 @@
 import { siteConfig } from "@/config/site";
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, ReactNode, SetStateAction } from "react";
 import { FieldValues, UseFormSetValue } from "react-hook-form";
 
 export interface ChildrenProps {
@@ -45,4 +45,13 @@ export type UploadImageProps<T extends FieldValues = any> = {
 export type responseAction = {
 	status: "success" | "error";
 	stripeUrl?: string;
+};
+
+export interface SearchResult {
+	public_id: string;
+};
+
+export interface ImageGridProps {
+	images: SearchResult[];
+	getImage: (imageData: SearchResult) => ReactNode;
 };

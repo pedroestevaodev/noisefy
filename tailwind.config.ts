@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 import plugin from "tailwindcss/plugin";
 import { fontFamily } from "tailwindcss/defaultTheme";
+import { nextui } from "@nextui-org/theme";
 
 const config: Config = {
 	darkMode: ["class"],
@@ -8,6 +9,7 @@ const config: Config = {
 		"./app/**/*.{js,ts,jsx,tsx,mdx}",
 		"./pages/**/*.{js,ts,jsx,tsx,mdx}",
 		"./components/**/*.{js,ts,jsx,tsx,mdx}",
+		"./node_modules/@nextui-org/theme/dist/components/(button|snippet|spinner|code|input).js"
 	],
 	future: {
 		hoverOnlyWhenSupported: true,
@@ -67,10 +69,10 @@ const config: Config = {
     				DEFAULT: 'hsl(var(--primary))',
     				foreground: 'hsl(var(--primary-foreground))'
     			},
-    			secondary: {
-    				DEFAULT: 'hsl(var(--secondary))',
-    				foreground: 'hsl(var(--secondary-foreground))'
-    			},
+    			// secondary: {
+    			// 	DEFAULT: 'hsl(var(--secondary))',
+    			// 	foreground: 'hsl(var(--secondary-foreground))'
+    			// },
     			muted: {
     				DEFAULT: 'hsl(var(--muted))',
     				foreground: 'hsl(var(--muted-foreground))'
@@ -129,7 +131,9 @@ const config: Config = {
     	},
     },
 	plugins: [
-		require('tailwindcss-textshadow'),
+		nextui(),
+		require('tailwindcss-animate'),
+		require('@savvywombat/tailwindcss-grid-areas'),
 		plugin(function ({ matchUtilities, theme }) {
 			matchUtilities(
 				{

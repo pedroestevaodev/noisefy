@@ -5,47 +5,41 @@ export const sidebarLinks: SidebarNavItem[] = [
     {
         title: "MENU",
         items: [
-            {
-                href: "/admin",
-                icon: "laptop",
-                title: "Admin Panel",
-                authorizeOnly: UserRole.ADMIN,
-            },
-            { href: "/dashboard", icon: "dashboard", title: "Inicio" },
-            {
-                href: "/dashboard/billing",
-                icon: "billing",
-                title: "Plano",
-                authorizeOnly: UserRole.USER,
+            { 
+                href: "/dashboard", 
+                icon: "dashboard", 
+                title: "Dashboard" 
             },
             {
-                href: "/admin/orders",
-                icon: "package",
-                title: "Orders",
-                badge: 2,
-                authorizeOnly: UserRole.ADMIN,
+                href: "/dashboard/studio",
+                icon: "studio",
+                title: "Studio",
+                // authorizeOnly: UserRole.ADMIN,
             },
             {
-                href: "#/dashboard/posts",
-                icon: "post",
-                title: "Post de usuários",
-                authorizeOnly: UserRole.USER,
-                disabled: true,
-            },
+                href: "/dashboard/gallery",
+                icon: "gallery",
+                title: "Galeria",
+            }
         ],
     },
     {
         title: "OPTIONS",
         items: [
-            { href: "/dashboard/settings", icon: "settings", title: "Configurações" },
-            { href: "/", icon: "home", title: "Página Inicial" },
-            { href: "/docs", icon: "bookOpen", title: "Documentação" },
+            { 
+                href: "/", 
+                icon: "home", 
+                title: "Home" 
+            },
             {
-                href: "#",
-                icon: "messages",
-                title: "Suporte",
-                authorizeOnly: UserRole.USER,
-                disabled: true,
+                href: "/dashboard/billing",
+                icon: "billing",
+                title: "Pagamento",
+            },
+            { 
+                href: "/dashboard/settings", 
+                icon: "settings", 
+                title: "Configurações" 
             },
         ],
     },
