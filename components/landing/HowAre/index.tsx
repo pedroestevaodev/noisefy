@@ -6,7 +6,7 @@ import BoxH from './boxH';
 const HowAre = ({ className }: HTMLAttributes<HTMLElement>) => {
     return (
         <div>
-        <div className="container text-noisefy-800 font-bold mb-5 mx-36 text-3xl">
+        <div className="container text-noisefy-800 font-bold mb-1 mt-4 mx-36 text-3xl">
             | Quem somos nós
         </div>
         <div className="grid grid-cols-4 content-center container">
