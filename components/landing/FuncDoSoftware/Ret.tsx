@@ -1,6 +1,3 @@
-import { cn } from "@/lib/utils";
-import { HTMLAttributes } from "react";
-import perguntasData from '@/public/perguntas.json';
 import React from "react";
 
 type RetPropos = {

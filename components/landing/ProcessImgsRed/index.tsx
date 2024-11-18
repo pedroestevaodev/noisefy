@@ -9,7 +9,7 @@ function ProcessImgsRed() {
             <div className="w-auto h-[14rem] relative z-10 bg-purple-500 text-white sm:p-6 shadow-lg flex-row items-center justify-between">
                 {/* Conteúdo do texto */}
                 <div className="flex flex-row items-center justify-between">
-                    <h2 className="text-lg sm:text-xl font-bold mb-2">
+                    <h2 className="text-lg sm:atext-xl font-bold mb-2">
                         Processamento de Imagens Redefinido
                     </h2>
                     <img
