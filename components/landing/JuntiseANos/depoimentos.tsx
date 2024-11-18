@@ -1,7 +1,4 @@
 "use client";
-import { cn } from "@/lib/utils";
-import { HTMLAttributes } from "react";
-import perguntasData from '@/public/perguntas.json';
 import Ret from "./Ret";
 import React, { useState, useEffect } from "react";
 
