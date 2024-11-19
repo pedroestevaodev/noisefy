@@ -20,30 +20,12 @@ const Header = ({ label }: HeaderProps) => {
 
     return (
         <div className="flex flex-col gap-y-4 items-center justify-center w-full">
-            {windowWidth >= 1024 ? (
-                // Exibe o título "Login" para resoluções maiores
-                <h1 className={cn(
-                    "text-3xl font-extrabold text-shadow-sm",
-                    fontMontserrat.className,
-                )}>
-                    Login
-                </h1>
-            ) : (
-                // Exibe o ícone e o título "Noisefy" para resoluções menores
-                <div className="flex items-center gap-2">
-                    <img
-                        src="/imgs/camera-noisefy-black.png"
-                        alt="Noisefy Icon"
-                        className="w-12 h-12"
-                    />
-                    <h1 className={cn(
-                        "text-black text-3xl font-extrabold",
-                        fontMontserrat.className,
-                    )}>
-                        Noisefy
-                    </h1>
-                </div>
-            )}
+            <h1 className={cn(
+                "text-3xl font-extrabold text-shadow-sm",
+                fontMontserrat.className,
+            )}>
+                Autenticação
+            </h1>
             <p className="text-muted-foreground text-sm">
                 {label}
             </p>

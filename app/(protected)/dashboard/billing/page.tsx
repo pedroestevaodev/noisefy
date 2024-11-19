@@ -5,16 +5,17 @@ import { DashboardHeader } from "@/components/dashboard/Header";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { currentUser } from "@/lib/session";
 import { getUserSubscriptionPlan } from "@/lib/subscription";
+import { auth } from "@/services/auth";
 
-export default async function BillingPage() {
+const BillingPage = async () => {
 	const user = await currentUser();
+	const session = await auth();
 
-	let userSubscriptionPlan;
-	if (user && user.id && user.role === "USER") {
-		userSubscriptionPlan = await getUserSubscriptionPlan(user.id);
-	} else {
-		redirect("/login");
+	if (!session?.user.id) {
+		redirect("/dashboard");
 	}
+
+	const userSubscriptionPlan = await getUserSubscriptionPlan(session.user.id);
 
 	return (
 		<>
@@ -44,4 +45,6 @@ export default async function BillingPage() {
 			</div>
 		</>
 	);
-}
+};
+
+export default BillingPage;

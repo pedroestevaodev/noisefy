@@ -4,7 +4,7 @@ const AuthLayout = ({ children }: ChildrenProps) => {
     return (
         <div className="relative flex flex-col bg-[url('/imgs/background-img.png')]">
             <div className="relative flex flex-grow min-h-screen items-center justify-center">
-                <div className="flex h-[35rem]">
+                <div className="flex bg-white dark:bg-noisefy-950 h-[35rem] max-lg:w-full max-lg:max-w-[400px] max-lg:px-4 rounded-xl overflow-hidden">
                     <div className="hidden lg:block bg-noisefy-900 w-[33rem] h-auto rounded-s-xl">   
                         <div className="flex justify-center items-center gap-4 mt-8">
                             <img className="w-[4.2rem] h-[3.5rem] absolute z-0 transform translate-x-[-73px] translate-y-[2px]" src="/imgs/camera-noisefy-purple.png" alt="" />                        
@@ -15,7 +15,9 @@ const AuthLayout = ({ children }: ChildrenProps) => {
                             <img  className="self-end scale-90 w-auto h-[442px] mb-10" src="/imgs/img-login.png" alt="Imagem login"/>
                         </div>
                     </div>
-                    {children}
+                    <div className="flex max-lg:w-full lg:min-w-[400px]">
+                        {children}
+                    </div>
                 </div>            
             </div>
         </div>

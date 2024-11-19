@@ -1,4 +1,3 @@
-import { siteConfig } from "@/config/site";
 import { Dispatch, ReactNode, SetStateAction } from "react";
 import { FieldValues, UseFormSetValue } from "react-hook-form";
 
@@ -29,8 +28,6 @@ export type SWRDataType<T = any> = {
 	total: number;
 	totalPages: number;
 };
-
-export type SiteConfig = typeof siteConfig;
 
 export type UploadImageProps<T extends FieldValues = any> = {
 	newImage: File;

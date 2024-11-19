@@ -5,10 +5,10 @@ export const stripeConfig = {
         publishableKey: process.env.STRIPE_PUBLISHABLE_KEY,
         secretKey: process.env.STRIPE_SECRET_KEY,
         webhookSecret: process.env.STRIPE_WEBHOOK_SECRET,
-        proMonthlyPlanId: process.env.STRIPE_PRO_MONTHLY_PLAN_ID,
-        proYearlyPlanId: process.env.STRIPE_PRO_YEARLY_PLAN_ID,
-        businessMonthlyPlanId: process.env.STRIPE_BUSINESS_MONTHLY_PLAN_ID,
-        businessYearlyPlanId: process.env.STRIPE_BUSINESS_YEARLY_PLAN_ID,
+        proMonthlyPlanId: process.env.NEXT_PUBLIC_STRIPE_PRO_MONTHLY_PLAN_ID,
+        proYearlyPlanId: process.env.NEXT_PUBLIC_STRIPE_PRO_YEARLY_PLAN_ID,
+        businessMonthlyPlanId: process.env.NEXT_PUBLIC_STRIPE_BUSINESS_MONTHLY_PLAN_ID,
+        businessYearlyPlanId: process.env.NEXT_PUBLIC_STRIPE_BUSINESS_YEARLY_PLAN_ID,
     },
 };
 

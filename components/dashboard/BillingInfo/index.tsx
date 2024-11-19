@@ -37,7 +37,7 @@ const BillingInfo = ({ userSubscriptionPlan }: BillingInfoProps) => {
                 {isPaid && stripeCustomerId ? (
                     <CustomerPortalButton userStripeId={stripeCustomerId} />
                 ) : (
-                    <Link href="/pricing" className={cn(buttonVariants())}>
+                    <Link href="/dashboard/pricing" className={cn(buttonVariants())}>
                         Escolha um plano
                     </Link>
                 )}

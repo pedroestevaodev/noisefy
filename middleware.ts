@@ -14,6 +14,10 @@ export default auth((req) => {
         return undefined;
     }
 
+    if (pathname.startsWith("/api/webhooks/stripe")) {
+        return NextResponse.next();
+    }
+
     if (isAuthRoute) {
         if (isLoogedIn) {
             return NextResponse.redirect(new URL(DEFAULT_LOGIN_REDIRECT, req.nextUrl));

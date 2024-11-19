@@ -14,10 +14,10 @@ namespace NodeJS {
         STRIPE_PUBLISHABLE_KEY: string;
         STRIPE_SECRET_KEY: string;
         STRIPE_WEBHOOK_SECRET: string;
-        STRIPE_PRO_MONTHLY_PLAN_ID: string;
-        STRIPE_PRO_YEARLY_PLAN_ID: string;
-        STRIPE_BUSINESS_MONTHLY_PLAN_ID: string;
-        STRIPE_BUSINESS_YEARLY_PLAN_ID: string;
+        NEXT_PUBLIC_STRIPE_PRO_MONTHLY_PLAN_ID: string;
+        NEXT_PUBLIC_STRIPE_PRO_YEARLY_PLAN_ID: string;
+        NEXT_PUBLIC_STRIPE_BUSINESS_MONTHLY_PLAN_ID: string;
+        NEXT_PUBLIC_STRIPE_BUSINESS_YEARLY_PLAN_ID: string;
         SMTP_EMAIL: string;
         SMTP_PASSOWORD: string;
         NEXT_PUBLIC_REPLICATE_API_TOKEN: string;
