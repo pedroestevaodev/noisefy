@@ -49,7 +49,7 @@ export const pricingData: SubscriptionPlan[] = [
 		title: "Business",
 		description: "For Power Users",
 		benefits: [
-			"Créditos ilimitados",
+			"10.000 créditos diários",
 			"Conversão de cores ilimitada",
 			"Geração de histogramas ilimitada",
 			"Galeria ilimitada",

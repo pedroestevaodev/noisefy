@@ -13,6 +13,20 @@ export const GET = async (req: NextRequest) => {
             return NextResponse.json({ error: "User is not authenticated.", status: 401 });
         }
 
+        const userSubscription = await prisma.user.findUnique({
+            where: { id: userId },
+            select: { stripePriceId: true },
+        });
+
+        let dailyLimit = 10;
+        const priceId = userSubscription?.stripePriceId;
+
+        if (priceId === process.env.NEXT_PUBLIC_STRIPE_PRO_MONTHLY_PLAN_ID || priceId === process.env.NEXT_PUBLIC_STRIPE_PRO_YEARLY_PLAN_ID) {
+            dailyLimit = 500;
+        } else if (priceId === process.env.NEXT_PUBLIC_STRIPE_BUSINESS_MONTHLY_PLAN_ID || priceId === process.env.NEXT_PUBLIC_STRIPE_BUSINESS_YEARLY_PLAN_ID) {
+            dailyLimit = 10000;
+        }
+
         const now = new Date();
         const resetAt = new Date(now);
         resetAt.setHours(Number(process.env.REMAINING_RESET_HOUR), 0, 0, 0);
@@ -37,7 +51,7 @@ export const GET = async (req: NextRequest) => {
             });
         }
 
-        const remainingGenerations = Math.max(0, Number(process.env.REMAINING_RATE_LIMIT) - userRateLimit.count);
+        const remainingGenerations = Math.max(0, dailyLimit - userRateLimit.count);
         const diff = userRateLimit.resetAt.getTime() - now.getTime();
         const hours = Math.floor(diff / (1000 * 60 * 60));
         const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
