@@ -14,4 +14,4 @@ const CardSkeleton = () => {
     );
 };
 
-export default CardSkeleton;
+export { CardSkeleton };

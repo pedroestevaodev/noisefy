@@ -1,9 +1,8 @@
-import Icons from "@/components/common/Icons";
+import { Icons } from "@/components/common/Icons";
 import { useDeleteAccountModal } from "../modals/DeleteAccountModal";
-import SectionColumns from "../SectionColumns";
+import { SectionColumns } from "../SectionColumns";
 import { Button } from "@/components/ui/button";
-import { siteConfig } from "@/config/site";
-import { DefaultTemplateString } from "next/dist/lib/metadata/types/metadata-types";
+import { siteMetadata } from "@/config/site";
 
 const DeleteAccountSection = () => {
     const { setShowDeleteAccountModal, DeleteAccountModal } = useDeleteAccountModal();
@@ -32,7 +31,7 @@ const DeleteAccountSection = () => {
                             ) : null}
                         </div>
                         <div className="text-balance text-sm text-muted-foreground">
-                            Exclua permanentemente sua conta {(siteConfig.title as DefaultTemplateString).default}
+                            Exclua permanentemente sua conta {siteMetadata.applicationName}
                             {userPaidPlan ? " e sua assinatura" : ""}. Esta ação não pode ser desfeita - prossiga com cautela.
                         </div>
                     </div>
@@ -52,4 +51,4 @@ const DeleteAccountSection = () => {
     );
 };
 
-export default DeleteAccountSection;
+export { DeleteAccountSection };

@@ -4,7 +4,7 @@ interface FormWarningProps {
     message?: string;
 };
 
-export const FormWarning = ({ message }: FormWarningProps) => {
+const FormWarning = ({ message }: FormWarningProps) => {
     if (!message) return null;
     
     return (
@@ -14,3 +14,5 @@ export const FormWarning = ({ message }: FormWarningProps) => {
         </div>
     )
 };
+
+export { FormWarning };

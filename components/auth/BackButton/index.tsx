@@ -28,4 +28,4 @@ const BackButton = ({
     );
 };
 
-export default BackButton;
+export { BackButton };

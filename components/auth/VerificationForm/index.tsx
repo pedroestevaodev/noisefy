@@ -1,14 +1,14 @@
 'use client';
 
 import { useSearchParams } from "next/navigation";
-import CardWrapper from "../CardWrapper";
+import { CardWrapper } from "../CardWrapper";
 import { BeatLoader } from "react-spinners";
 import { useCallback, useEffect, useState } from "react";
 import { verification } from "@/actions/mail-verification";
 import { FormSuccess } from "@/components/common/FormSuccess";
 import { FormError } from "@/components/common/FormError";
 
-export const VerificationForm = () => {
+const VerificationForm = () => {
     const [error, setError] = useState<string | undefined>();
     const [success, setSuccess] = useState<string | undefined>();
 
@@ -55,4 +55,4 @@ export const VerificationForm = () => {
     );
 };
 
-export default VerificationForm;
+export { VerificationForm };

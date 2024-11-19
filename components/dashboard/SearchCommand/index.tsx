@@ -1,6 +1,6 @@
 'use client';
 
-import Icons from "@/components/common/Icons";
+import { Icons } from "@/components/common/Icons";
 import { Button } from "@/components/ui/button";
 import { CommandDialog, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
 import { cn } from "@/lib/utils";
@@ -78,4 +78,4 @@ const SearchCommand = ({ links }: DashboardSidebarProps) => {
     );
 };
 
-export default SearchCommand;
+export { SearchCommand };

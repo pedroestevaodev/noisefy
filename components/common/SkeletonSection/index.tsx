@@ -25,4 +25,4 @@ const SkeletonSection = ({ card = false }: SkeletonSectionProps) => {
     );
 };
 
-export default SkeletonSection;
+export { SkeletonSection };

@@ -1,9 +1,9 @@
 'use client';
 
 import { DiamondPercent } from "lucide-react";
-import MobileSheetSidebar from "../MobileSheetSidebar";
-import ModeToggle from "@/components/common/ModeToggle";
-import UserAccountNav from "../UserAccountNav";
+import { MobileSheetSidebar } from "../MobileSheetSidebar";
+import { ModeToggle } from "@/components/common/ModeToggle";
+import { UserAccountNav } from "../UserAccountNav";
 import { DashboardSidebarProps } from "@/types/components";
 import { useApiData } from "@/hooks/useApiData";
 import { Skeleton } from "@/components/ui/skeleton";

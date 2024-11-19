@@ -8,22 +8,26 @@ import {
     ChevronRight,
     Copy,
     CreditCard,
+    Facebook,
     File,
     FileText,
     HelpCircle,
     Home,
     Image,
     Images,
+    Instagram,
     Laptop,
     LayoutPanelLeft,
     LineChart,
     Loader2,
     LucideIcon,
     LucideProps,
+    Mail,
     MessagesSquare,
     Moon,
     MoreVertical,
     Package,
+    Phone,
     Plus,
     Puzzle,
     Search,
@@ -48,6 +52,8 @@ const Icons = {
     copy: Copy,
     dashboard: LayoutPanelLeft,
     ellipsis: MoreVertical,
+    email: Mail,
+    facebook: Facebook,
     gallery: Images,
     gitHub: ({ ...props }: LucideProps) => (
         <svg
@@ -102,6 +108,7 @@ const Icons = {
     ),
     help: HelpCircle,
     home: Home,
+    instagram: Instagram,
     laptop: Laptop,
     lineChart: LineChart,
     logo: Puzzle,
@@ -111,6 +118,7 @@ const Icons = {
     package: Package,
     page: File,
     post: FileText,
+    phone: Phone,
     search: Search,
     settings: Settings,
     spinner: Loader2,
@@ -138,4 +146,4 @@ const Icons = {
     warning: AlertTriangle,
 };
 
-export default Icons;
+export { Icons };

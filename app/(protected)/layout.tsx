@@ -1,4 +1,4 @@
-import DashboardSidebar from "@/components/dashboard/DashboardSidebar";
+import { DashboardSidebar } from "@/components/dashboard/DashboardSidebar";
 import { DashboardNavbar } from "@/components/dashboard/Navbar";
 import { sidebarLinks } from "@/config/dashboard";
 import { currentUser } from "@/lib/session";

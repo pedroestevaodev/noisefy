@@ -3,17 +3,24 @@
 import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { useTheme } from "next-themes";
-import Icons from "../Icons";
+import { Icons } from "../Icons";
+import { cn } from "@/lib/utils";
 
-const ModeToggle = () => {
+const ModeToggle = ({ className }: { className?: string }) => {
     const { setTheme } = useTheme();
 
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="sm" className="size-8 px-0 outline-none !ring-0">
-                    <Icons.sun className="rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                    <Icons.moon className="absolute rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                <Button 
+                    variant="ghost" 
+                    size="sm" 
+                    className={cn(
+                        "px-0 outline-none transition-colors duration-200",
+                        className,
+                    )}>
+                    <Icons.sun size={20} className="rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                    <Icons.moon size={20} className="absolute rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
                     <span className="sr-only">Toggle theme</span>
                 </Button>
             </DropdownMenuTrigger>
@@ -35,4 +42,4 @@ const ModeToggle = () => {
     );
 };
 
-export default ModeToggle;
+export { ModeToggle };

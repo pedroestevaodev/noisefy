@@ -18,4 +18,4 @@ const SectionColumns = ({
     );
 };
 
-export default SectionColumns;
+export { SectionColumns };

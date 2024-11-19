@@ -5,7 +5,7 @@ import useMediaQuery from "@/hooks/useMediaQuery";
 import { Drawer, DrawerContent, DrawerOverlay, DrawerPortal, DrawerTrigger } from "@/components/ui/drawer";
 import Link from "next/link";
 import { LayoutDashboard, Lock, LogOut, Settings } from "lucide-react";
-import UserAvatar from "../UserAvatar";
+import { UserAvatar } from "../UserAvatar";
 import { getSession, signOut, useSession } from "next-auth/react";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 
@@ -184,4 +184,4 @@ const UserAccountNav = () => {
     );
 };
 
-export default UserAccountNav;
+export { UserAccountNav };

@@ -3,7 +3,7 @@ import { BillingInfoProps } from "@/types/components";
 import { cn, formatDate } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import CustomerPortalButton from "../CustomerPortalButton";
+import { CustomerPortalButton } from "../CustomerPortalButton";
 
 const BillingInfo = ({ userSubscriptionPlan }: BillingInfoProps) => {
     const {
@@ -46,4 +46,4 @@ const BillingInfo = ({ userSubscriptionPlan }: BillingInfoProps) => {
     );
 };
 
-export default BillingInfo;
+export { BillingInfo };

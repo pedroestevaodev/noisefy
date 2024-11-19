@@ -1,7 +1,7 @@
 'use client';
 
 import { openCustomerPortal } from "@/actions/openCustomerPortal";
-import Icons from "@/components/common/Icons";
+import { Icons } from "@/components/common/Icons";
 import { Button } from "@/components/ui/button";
 import { CustomerPortalButtonProps } from "@/types/components";
 import { useTransition } from "react";
@@ -22,4 +22,4 @@ const CustomerPortalButton = ({ userStripeId }: CustomerPortalButtonProps) => {
     );
 };
 
-export default CustomerPortalButton;
+export { CustomerPortalButton };

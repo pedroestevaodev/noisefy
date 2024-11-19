@@ -3,35 +3,35 @@ import { UserRole } from "@prisma/client";
 
 export const LoginSchema = z.object({
     email: z.string().email({
-        message: "Email is required",
+        message: "Informe um email",
     }),
     password: z.string().min(1, {
-        message: "Password is required",
+        message: "Informe uma senha",
     }),
     code: z.optional(z.string()),
 });
 
 export const RegisterSchema = z.object({
     email: z.string().email({
-        message: "Email is required",
+        message: "Informe um email",
     }),
     password: z.string().min(6, {
-        message: "Minimum 6 characters required",
+        message: "Precisa ter no mínimo 6 caracteres",
     }),
     name: z.string().min(1, {
-        message: "Name is required",
+        message: "Informe um nome",
     })
 });
 
 export const ForgotPasswordSchema = z.object({
     email: z.string().email({
-        message: "Email is required",
+        message: "Informe um email",
     }),
 });
 
 export const NewPasswordSchema = z.object({
     password: z.string().min(6, {
-        message: "Minimum 6 characters required",
+        message: "Precisa ter no mínimo 6 caracteres",
     }),
 });
 
@@ -49,7 +49,7 @@ export const SettingsSchema = z.object({
 
     return true;
 }, {
-    message: "New password is required",
+    message: "Informe a nova senha",
     path: ["newPassword"],
 }).refine((data) => {
     if (data.newPassword && !data.password) {
@@ -58,6 +58,12 @@ export const SettingsSchema = z.object({
 
     return true;
 }, {
-    message: "Password is required!",
+    message: "Informe a senha",
     path: ["password"],
+});
+
+export const NewsletterSchema = z.object({
+    email: z.string().email({
+        message: "Informe um email válido",
+    }),
 });

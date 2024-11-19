@@ -2,7 +2,7 @@
 
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import { useRouter } from "next/navigation";
-import LoginForm from "@/components/auth/LoginForm";
+import { LoginForm } from "@/components/auth/LoginForm";
 
 interface LoginButtonProps {
     children: React.ReactNode;
@@ -41,4 +41,4 @@ const LoginButton = ({
     );
 };
 
-export default LoginButton;
+export { LoginButton };

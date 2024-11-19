@@ -2,7 +2,7 @@
 
 import { useState, useTransition } from "react";
 import * as z from "zod";
-import CardWrapper from "@/components/auth/CardWrapper";
+import { CardWrapper } from "@/components/auth/CardWrapper";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { RegisterSchema } from "@/schemas";
@@ -131,4 +131,4 @@ const RegisterForm = () => {
     );
 };
 
-export default RegisterForm;
+export { RegisterForm };

@@ -1,5 +1,5 @@
-import SkeletonSection from "@/components/common/SkeletonSection";
-import DashboardHeader from "@/components/dashboard/Header";
+import { SkeletonSection } from "@/components/common/SkeletonSection";
+import { DashboardHeader } from "@/components/dashboard/Header";
 
 const DashboardSettingsLoading = () => {
 	return (

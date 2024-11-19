@@ -1,37 +1,100 @@
-import { cn } from "@/lib/utils";
-import { HTMLAttributes } from "react";
-import Itens from './itens';
-import Image from "next/image";
+import { footerLinks, socialLinks } from "@/config/site";
+import Link from "next/link";
+import { NewsletterForm } from "../forms/NewsletterForm";
+import { ModeToggle } from "@/components/common/ModeToggle";
+import { Icons } from "@/components/common/Icons";
 
-const imagem = <Image src="/imgs/instagram.svg" alt="imagem do instagram"/>
-const Footer = ({ className }: HTMLAttributes<HTMLElement>) => {
+const Footer = () => {
     return (
-        <footer className={cn("border-t", className, "bg-noisefy-500", "h-96") }>
-            <div className="container grid max-w-6xl grid-cols-2 gap-6 md:grid-cols-3">
-            <div className=" mx-28 sm:mx-24 md:mx-24 lg:-mx-8 w-96 sm:w-97  md:w-98 lg:w-100 h-64 flex justify-center items-baseline content-center">
-                <ul className="">
-                    <div className="text-white flex justify-normal my-8 text-sm lg:text-lg font-semibold cursor-default">
-                    <li className="lg:mx-14">| Contato <Itens item={['emailsuporte@noisefy.com', '+55 16 99178-4589']} quant={2} link={['#', '#']} /></li>
-                    <li className="mx-4 lg:mx-14">| Redes Sociais <Itens srcS={['/imgs/instagram.svg', '/imgs/facebook.svg', '/imgs/envelope.svg']} w={20} h={25} altS={"imagem de uma rede social"} item={['instagram', 'Facebook', 'NewsLetter']} quant={3} link={['#', '#', '#']} /></li>
-                    <li className="mx-4 lg:mx-14">| Páginas <Itens item={['Home', 'Histogram', 'Img Color Convert', 'Thresholding', 'Pré-processing', 'Galeria']} quant={6} link={['#', '#', '#', '#', '#', '#']} /></li>
-                    <li className="mx-4 lg:mx-14">| Localização <Itens item={['Rua José Curvelo', '14026-240 - n°110', 'Ribeirão Preto, São Paulo']} quant={3} link={['#', '#', '#']} /></li>
+        <footer className="border-t bg-noisefy-500 dark:bg-noisefy-900">
+            <div className="container grid max-w-6xl grid-cols-2 gap-6 max-[375px]:gap-x-3 max-sm:gap-y-8 px-5 py-14 md:grid-cols-5">
+                {footerLinks.map((section) => (
+                    <div key={section.title}>
+                        <span className="text-sm font-semibold uppercase text-white dark:text-foreground">
+                            {section.title}
+                        </span>
+                        <ul className="mt-4 list-inside space-y-3">
+                            {section.items.map((item) => {
+                                const Icon = item.icon ? Icons[item.icon] : null;
+
+                                return (
+                                    <li key={item.title}>
+                                        <Link
+                                            href={item.href}
+                                            className="flex items-center gap-2 text-sm text-neutral-300 font-medium hover:text-white hover:dark:text-primary focus-visible:outline-none focus-visible:ring-0 focus-visible:text-white focus-visible:underline transition-colors duration-200"
+                                        >
+                                            {Icon && <Icon className="size-5" />}
+                                            {item.title}
+                                        </Link>
+                                    </li>
+                                );
+                            })}
+                        </ul>
                     </div>
-                </ul>
-
-            </div>  
-
-            <div className="text-white text-bold -mx-40  mt-64 h-20 content-end justify-center items-baseline w-80 text-center cursor-default sm:w-96 sm:-mx-44 md:w-97 md:-mx-56 lg:w-100 lg:-mx-96 " >
-                <p>
-                Desenvolvido por Caio Caminitti | Sergio Caminitti | Pedro Estevão | Sara Miranda
-                </p>
-                <p>
-                Noisefy 2024 @ Todos os direitos resevados
-                </p>
+                ))}
+                <div className="col-span-full flex flex-col items-end sm:col-span-1 md:col-span-2">
+                    <NewsletterForm />
+                </div>
             </div>
-                
+
+            <div className="border-t py-4">
+                <div className="container flex flex-col sm:flex-row max-w-6xl items-center justify-between gap-5">
+                    <p className="text-left text-sm text-neutral-300 dark:text-muted-foreground max-sm:text-center">
+                        2024 © Desenvolvido por{" "}
+                        <Link
+                            href={socialLinks.perfis.caio}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="font-medium underline underline-offset-4 hover:text-white hover:dark:text-primary focus-visible:outline-none focus-visible:ring-0 focus-visible:text-white transition-colors duration-200"
+                        >
+                            Caio
+                        </Link>
+                        ,{" "}
+                        <Link
+                            href={socialLinks.perfis.caio}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="font-medium underline underline-offset-4 hover:text-white hover:dark:text-primary focus-visible:outline-none focus-visible:ring-0 focus-visible:text-white transition-colors duration-200"
+                        >
+                            Sara
+                        </Link>
+                        , e{" "}
+                        <Link
+                            href={socialLinks.perfis.sergio}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="font-medium underline underline-offset-4 hover:text-white hover:dark:text-primary focus-visible:outline-none focus-visible:ring-0 focus-visible:text-white transition-colors duration-200"
+                        >
+                            Sérgio
+                        </Link>
+                        ,{" "}
+                        <Link
+                            href={socialLinks.perfis.sergio}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="font-medium underline underline-offset-4 hover:text-white hover:dark:text-primary focus-visible:outline-none focus-visible:ring-0 focus-visible:text-white transition-colors duration-200"
+                        >
+                            Pedro
+                        </Link>
+                        .
+                    </p>
+
+                    <div className="flex items-center gap-2">
+                        <Link
+                            href={socialLinks.github}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="flex items-center justify-center size-8 font-medium underline rounded-md underline-offset-4 hover:bg-white/15 text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:text-white transition-colors duration-200"
+                        >
+                            <Icons.gitHub className="size-5" />
+                        </Link>
+
+                        <ModeToggle className="hover:bg-white/15 size-8 [&_svg]:size-5 text-white hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:text-white" />
+                    </div>
+                </div>
             </div>
         </footer>
     );
 };
 
-export default Footer;
+export { Footer };

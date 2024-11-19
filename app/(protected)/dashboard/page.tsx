@@ -1,5 +1,5 @@
-import EmptyPlaceholder from "@/components/common/EmptyPlaceholder";
-import DashboardHeader from "@/components/dashboard/Header";
+import { EmptyPlaceholder } from "@/components/common/EmptyPlaceholder";
+import { DashboardHeader } from "@/components/dashboard/Header";
 import { Button } from "@/components/ui/button";
 import { currentUser } from "@/lib/session";
 

@@ -12,4 +12,4 @@ const DashboardHeader = ({ heading, text, children }: DashboardHeaderProps) => {
     );
 };
 
-export default DashboardHeader;
+export { DashboardHeader };

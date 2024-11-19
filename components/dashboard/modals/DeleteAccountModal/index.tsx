@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useState } from "react";
-import UserAvatar from "../../UserAvatar";
+import { UserAvatar } from "../../UserAvatar";
 import useCurrentUser from "@/hooks/useCurrentUser";
 import { logout } from "@/actions/logout";
 import { Modal } from "@/components/ui/modal";

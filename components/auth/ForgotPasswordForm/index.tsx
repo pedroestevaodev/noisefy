@@ -2,7 +2,7 @@
 
 import { useState, useTransition } from "react";
 import * as z from "zod";
-import CardWrapper from "@/components/auth/CardWrapper";
+import { CardWrapper } from "@/components/auth/CardWrapper";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ForgotPasswordSchema } from "@/schemas";
@@ -94,4 +94,4 @@ const ForgotPasswordForm = () => {
     );
 };
 
-export default ForgotPasswordForm;
+export { ForgotPasswordForm };

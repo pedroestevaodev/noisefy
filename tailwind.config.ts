@@ -15,31 +15,56 @@ const config: Config = {
 		hoverOnlyWhenSupported: true,
 	},
 	theme: {
-    	container: {
-    		center: true,
-    		padding: '.8rem',
-    	},
-    	extend: {
+		container: {
+			center: true,
+			padding: '.8rem',
+		},
+		extend: {
+			animation: {
+				'accordion-down': 'accordion-down 0.2s ease-out',
+				'accordion-up': 'accordion-up 0.2s ease-out'
+			},
+			backgroundColor: {
+				'noisefy': {
+					50: '#f7f3fd',
+					100: '#ded0f5',
+					200: '#c3aced',
+					300: '#67e8f9',
+					400: '#906ddc',
+					500: '#825fd8',
+					600: '#714cd3',
+					700: '#623fcf',
+					800: '#5131b6',
+					900: '#36226c',
+					950: '#1e1433',
+				},
+			},
+			borderColor: {
+				'noisefy': {
+					50: '#f7f3fd',
+					100: '#ded0f5',
+					200: '#c3aced',
+					300: '#67e8f9',
+					400: '#906ddc',
+					500: '#825fd8',
+					600: '#714cd3',
+					700: '#623fcf',
+					800: '#5131b6',
+					900: '#36226c',
+					950: '#1e1433',
+				},
+			},
+			borderRadius: {
+				circle: '50%',
+				lg: 'var(--radius)',
+				md: 'calc(var(--radius) - 2px)',
+				sm: 'calc(var(--radius) - 4px)'
+			},
 			boxShadow: {
 				'custom-purple': '6px 6px 5px #825FD8',
-			  },
-
-			spacing: {
-				'97' : '34rem',
-				'98' : '36rem',
-				'99': '48rem',
-				'100': '72rem',
-				'101': '78rem'
-			  },
-			
-    		borderRadius: {
-    			circle: '50%',
-    			lg: 'var(--radius)',
-    			md: 'calc(var(--radius) - 2px)',
-    			sm: 'calc(var(--radius) - 4px)'
-    		},
-    		colors: {
-				'verde':{
+			},
+			colors: {
+				'verde': {
 					100: '#3CD3C1'
 				},
 				'noisefy': {
@@ -53,83 +78,97 @@ const config: Config = {
 					700: '#623fcf',
 					800: '#5131b6',
 					900: '#36226c',
-					950: '1e1433',
-				  },
-    			background: 'hsl(var(--background))',
-    			foreground: 'hsl(var(--foreground))',
-    			card: {
-    				DEFAULT: 'hsl(var(--card))',
-    				foreground: 'hsl(var(--card-foreground))'
-    			},
-    			popover: {
-    				DEFAULT: 'hsl(var(--popover))',
-    				foreground: 'hsl(var(--popover-foreground))'
-    			},
-    			primary: {
-    				DEFAULT: 'hsl(var(--primary))',
-    				foreground: 'hsl(var(--primary-foreground))'
-    			},
-    			// secondary: {
-    			// 	DEFAULT: 'hsl(var(--secondary))',
-    			// 	foreground: 'hsl(var(--secondary-foreground))'
-    			// },
-    			muted: {
-    				DEFAULT: 'hsl(var(--muted))',
-    				foreground: 'hsl(var(--muted-foreground))'
-    			},
-    			accent: {
-    				DEFAULT: 'hsl(var(--accent))',
-    				foreground: 'hsl(var(--accent-foreground))'
-    			},
-    			destructive: {
-    				DEFAULT: 'hsl(var(--destructive))',
-    				foreground: 'hsl(var(--destructive-foreground))'
-    			},
-    			border: 'hsl(var(--border))',
-    			input: 'hsl(var(--input))',
-    			ring: 'hsl(var(--ring))',
-    			chart: {
-    				'1': 'hsl(var(--chart-1))',
-    				'2': 'hsl(var(--chart-2))',
-    				'3': 'hsl(var(--chart-3))',
-    				'4': 'hsl(var(--chart-4))',
-    				'5': 'hsl(var(--chart-5))'
-    			},
-    		},
-    		fontFamily: {
-    			sans: ["var(--font-sans)", ...fontFamily.sans],
-    			urban: ["var(--font-urban)", ...fontFamily.sans],
-    			heading: ["var(--font-heading)", ...fontFamily.sans],
-    			geist: ["var(--font-geist)", ...fontFamily.sans],
+					950: '#1e1433',
+				},
+				background: 'hsl(var(--background))',
+				foreground: 'hsl(var(--foreground))',
+				card: {
+					DEFAULT: 'hsl(var(--card))',
+					foreground: 'hsl(var(--card-foreground))'
+				},
+				popover: {
+					DEFAULT: 'hsl(var(--popover))',
+					foreground: 'hsl(var(--popover-foreground))'
+				},
+				primary: {
+					DEFAULT: 'hsl(var(--primary))',
+					foreground: 'hsl(var(--primary-foreground))'
+				},
+				muted: {
+					DEFAULT: 'hsl(var(--muted))',
+					foreground: 'hsl(var(--muted-foreground))'
+				},
+				accent: {
+					DEFAULT: 'hsl(var(--accent))',
+					foreground: 'hsl(var(--accent-foreground))'
+				},
+				destructive: {
+					DEFAULT: 'hsl(var(--destructive))',
+					foreground: 'hsl(var(--destructive-foreground))'
+				},
+				border: 'hsl(var(--border))',
+				input: 'hsl(var(--input))',
+				ring: 'hsl(var(--ring))',
+				chart: {
+					'1': 'hsl(var(--chart-1))',
+					'2': 'hsl(var(--chart-2))',
+					'3': 'hsl(var(--chart-3))',
+					'4': 'hsl(var(--chart-4))',
+					'5': 'hsl(var(--chart-5))'
+				},
+			},
+			fontFamily: {
+				sans: ["var(--font-sans)", ...fontFamily.sans],
+				urban: ["var(--font-urban)", ...fontFamily.sans],
+				heading: ["var(--font-heading)", ...fontFamily.sans],
+				geist: ["var(--font-geist)", ...fontFamily.sans],
 				'roboto': ['Roboto']
-    		},
+			},
 			fontSize: {
 				'2xl': '1.28rem',
 			},
-    		keyframes: {
-    			'accordion-down': {
-    				from: {
-    					height: '0'
-    				},
-    				to: {
-    					height: 'var(--radix-accordion-content-height)'
-    				}
-    			},
-    			'accordion-up': {
-    				from: {
-    					height: 'var(--radix-accordion-content-height)'
-    				},
-    				to: {
-    					height: '0'
-    				}
-    			}
-    		},
-    		animation: {
-    			'accordion-down': 'accordion-down 0.2s ease-out',
-    			'accordion-up': 'accordion-up 0.2s ease-out'
-    		}
-    	},
-    },
+			keyframes: {
+				'accordion-down': {
+					from: {
+						height: '0'
+					},
+					to: {
+						height: 'var(--radix-accordion-content-height)'
+					}
+				},
+				'accordion-up': {
+					from: {
+						height: 'var(--radix-accordion-content-height)'
+					},
+					to: {
+						height: '0'
+					}
+				}
+			},
+			ringColor: {
+				'noisefy': {
+					50: '#f7f3fd',
+					100: '#ded0f5',
+					200: '#c3aced',
+					300: '#67e8f9',
+					400: '#906ddc',
+					500: '#825fd8',
+					600: '#714cd3',
+					700: '#623fcf',
+					800: '#5131b6',
+					900: '#36226c',
+					950: '#1e1433',
+				},
+			},
+			spacing: {
+				'97': '34rem',
+				'98': '36rem',
+				'99': '48rem',
+				'100': '72rem',
+				'101': '78rem'
+			},
+		},
+	},
 	plugins: [
 		nextui(),
 		require('tailwindcss-animate'),
@@ -166,7 +205,7 @@ const config: Config = {
 					'transform-style': 'preserve-3d',
 				},
 			})
-		}),	
+		}),
 	],
 };
 

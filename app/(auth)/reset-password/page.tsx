@@ -1,4 +1,4 @@
-import NewPasswordForm from "@/components/auth/NewPasswordForm";
+import { NewPasswordForm } from "@/components/auth/NewPasswordForm";
 import { Suspense } from "react";
 
 const ResetPasswordPage = () => {

@@ -1,7 +1,7 @@
 'use client';
 
-import Icons from "@/components/common/Icons";
-import ModeToggle from "@/components/common/ModeToggle";
+import { Icons } from "@/components/common/Icons";
+import { ModeToggle } from "@/components/common/ModeToggle";
 import { Button } from "@/components/ui/button";
 import { socialLinks } from "@/config/site";
 import { cn } from "@/lib/utils";
@@ -26,15 +26,15 @@ const NavbarMobile = () => {
         <>
             <Button
                 className={cn(
-                    "fixed right-2 top-2.5 z-50 rounded-full p-2 transition-colors duration-200 hover:bg-muted focus:outline-none active:bg-muted md:hidden",
+                    "fixed right-3 top-3 z-50 h-auto [&_svg]:size-6 bg-transparent hover:bg-transparent focus-visible:bg-transparent text-white rounded-full shadow-none p-2 transition-colors duration-200 focus:outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white md:hidden",
                     open && "hover:bg-muted active:bg-muted",
                 )}
                 onClick={() => setOpen(!open)}
             >
                 {open ? (
-                    <X className="size-5 text-muted-foreground" />
+                    <X />
                 ) : (
-                    <Menu className="size-5 text-muted-foreground" />
+                    <Menu />
                 )}
             </Button>
 
@@ -44,10 +44,10 @@ const NavbarMobile = () => {
                     open && "block",
                 )}
             >
-                <ul className="grid divide-y divide-muted">
+                <ul className="grid">
                     {session ? (
                         <>
-                            <li className="py-3">
+                            <li className="py-3 border-b-1 border-b-muted">
                                 <Link
                                     href="/dashboard"
                                     onClick={() => setOpen(false)}
@@ -59,7 +59,7 @@ const NavbarMobile = () => {
                         </>
                     ) : (
                         <>
-                            <li className="py-3">
+                            <li className="py-3 border-b-1 border-b-muted">
                                 <Link
                                     href="/login"
                                     onClick={() => setOpen(false)}
@@ -69,7 +69,7 @@ const NavbarMobile = () => {
                                 </Link>
                             </li>
 
-                            <li className="py-3">
+                            <li className="py-3 border-b-1 border-b-muted">
                                 <Link
                                     href="/register"
                                     onClick={() => setOpen(false)}
@@ -84,14 +84,14 @@ const NavbarMobile = () => {
 
                 <div className="mt-5 flex items-center justify-end space-x-4">
                     <Link href={socialLinks.github} target="_blank" rel="noreferrer">
-                        <Icons.gitHub className="size-6" />
+                        <Icons.gitHub className="size-5" />
                         <span className="sr-only">GitHub</span>
                     </Link>
-                    <ModeToggle />
+                    <ModeToggle className="[&_svg]:size-5" />
                 </div>
             </nav>
         </>
     );
 };
 
-export default NavbarMobile;
+export { NavbarMobile };

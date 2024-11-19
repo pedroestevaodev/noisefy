@@ -1,7 +1,7 @@
 import React, { Dispatch, ReactNode, SetStateAction, SVGProps } from "react";
 import { LucideIcon } from "lucide-react";
 import { FieldError } from "react-hook-form";
-import Icons from "@/components/common/Icons";
+import { Icons } from "@/components/common/Icons";
 import { AvatarProps } from "@radix-ui/react-avatar";
 import { User, UserRole } from "@prisma/client";
 import { UserSubscriptionPlan } from "./subscription";

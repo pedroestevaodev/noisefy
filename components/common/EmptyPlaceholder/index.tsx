@@ -1,7 +1,7 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
 import { EmptyPlaceholderDescriptionProps, EmptyPlaceholderIconProps, EmptyPlaceholderProps, EmptyPlaceholderTitleProps } from "@/types/components";
-import Icons from "@/components/common/Icons";
+import { Icons } from "@/components/common/Icons";
 
 const EmptyPlaceholder = ({
     className,
@@ -28,7 +28,7 @@ EmptyPlaceholder.Icon = ({
     className,
     ...props
 }: EmptyPlaceholderIconProps) => {
-    const Icon = Icons[name];
+    const Icon = Icons[name as keyof typeof Icons];
 
     if (!Icon) {
         return null;
@@ -69,4 +69,4 @@ EmptyPlaceholder.Description = ({
     );
 };
 
-export default EmptyPlaceholder;
+export { EmptyPlaceholder };

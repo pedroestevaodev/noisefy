@@ -1,4 +1,4 @@
-import Icons from "@/components/common/Icons";
+import { Icons } from "@/components/common/Icons";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { UserAvatarProps } from "@/types/components";
 
@@ -17,4 +17,4 @@ const UserAvatar = ({ user, ...props }: UserAvatarProps) => {
     );
 };
 
-export default UserAvatar;
+export { UserAvatar };

@@ -1,35 +1,20 @@
-'use client';
+import * as React from "react"
 
-import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils"
 
 const Card = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
-  >(({ className, ...props }, ref) => {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    const handleResize = () => setWindowWidth(window.innerWidth);
-
-    window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  return (
-    <div
-      ref={ref}
-      className={cn(
-        // Aplica a classe condicional com base na largura
-        windowWidth >= 1024 ? "rounded-xl" : "rounded-xl",
-        "border text-card-foreground shadow",
-        className
-      )}
-      {...props}
-    />
-  );
-  });
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn(
+      "rounded-xl border bg-card text-card-foreground shadow",
+      className
+    )}
+    {...props}
+  />
+));
 Card.displayName = "Card"
 
 const CardHeader = React.forwardRef<

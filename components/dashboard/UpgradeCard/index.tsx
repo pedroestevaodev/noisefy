@@ -19,4 +19,4 @@ const UpgradeCard = ({ ...props }) => {
     );
 };
 
-export default UpgradeCard;
+export { UpgradeCard };

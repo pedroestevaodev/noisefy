@@ -1,6 +1,6 @@
 'use client';
 
-import Icons from "@/components/common/Icons";
+import { Icons } from "@/components/common/Icons";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -12,9 +12,8 @@ import { Menu } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Fragment, useState } from "react";
-import UpgradeCard from "../UpgradeCard";
-import { siteConfig } from "@/config/site";
-import { DefaultTemplateString } from "next/dist/lib/metadata/types/metadata-types";
+import { UpgradeCard } from "../UpgradeCard";
+import { siteMetadata } from "@/config/site";
 
 const MobileSheetSidebar = ({ links }: DashboardSidebarProps) => {
     const path = usePathname();
@@ -48,7 +47,7 @@ const MobileSheetSidebar = ({ links }: DashboardSidebarProps) => {
                                     className="w-9 h-7 min-w-6"
                                     />
                                     <span className="font-urban text-xl font-bold text-noisefy-800">
-                                        {(siteConfig.title as DefaultTemplateString).default}
+                                        {siteMetadata.applicationName}
                                     </span>
                                 </Link>
 
@@ -62,7 +61,7 @@ const MobileSheetSidebar = ({ links }: DashboardSidebarProps) => {
                                         </p>
 
                                         {section.items.map((item) => {
-                                            const Icon = Icons[item.icon || "arrowRight"];
+                                            const Icon = Icons[item.icon as keyof typeof Icons || "arrowRight"];
                                             return (
                                                 item.href && (
                                                     <Fragment key={`link-fragment-${item.title}`}>
@@ -112,4 +111,4 @@ const MobileSheetSidebar = ({ links }: DashboardSidebarProps) => {
     );
 };
 
-export default MobileSheetSidebar;
+export { MobileSheetSidebar };

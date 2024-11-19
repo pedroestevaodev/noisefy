@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
-import Icons from "@/components/common/Icons";
-import BillingInfo from "@/components/dashboard/BillingInfo";
-import DashboardHeader from "@/components/dashboard/Header";
+import { Icons } from "@/components/common/Icons";
+import { BillingInfo } from "@/components/dashboard/BillingInfo";
+import { DashboardHeader } from "@/components/dashboard/Header";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { currentUser } from "@/lib/session";
 import { getUserSubscriptionPlan } from "@/lib/subscription";
