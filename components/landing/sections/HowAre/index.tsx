@@ -12,10 +12,10 @@ const HowAre = () => {
                     Quem somos nós
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-y-16 content-center container">
-                    <BoxH srcS="imgs/caio.svg" name="Caio Caminitti" />
-                    <BoxH srcS="imgs/sergio.svg" name="Sérgio Caminitti" />
-                    <BoxH srcS="imgs/sara.svg" name="Sara Miranda" />
-                    <BoxH srcS="imgs/pedro.svg" name="Pedro Estevão" />
+                    <BoxH srcS="imgs/caio.svg" name="Caio Caminitti" altS="Abordagem estratégica e uma mente analítica. Ele é apaixonado por encontrar a melhor forma de alcançar os objetivos, sempre mantendo a equipe no caminho certo. Com sua habilidade em gestão e colaboração, Caio garante que as engrenagens do time estejam sempre em movimento." />
+                    <BoxH srcS="imgs/sergio.svg" name="Sérgio Caminitti" altS="Conhecido por sua energia e entusiasmo em cada projeto que assume. Um comunicador nato, ele é a ponte entre as ideias e a execução, ajudando a transformar conceitos em realidade. Sérgio acredita que o trabalho em equipe é o caminho para o sucesso, e está sempre motivando os colegas com sua atitude positiva." />
+                    <BoxH srcS="imgs/sara.svg" name="Sara Miranda" altS="Uma profissional multifacetada que combina inovação e organização em seu trabalho. Com um olhar atento para os detalhes e uma mente criativa, ela contribui com ideias únicas e práticas que elevam a qualidade dos projetos. Sara é uma líder natural que inspira confiança e união na equipe." />
+                    <BoxH srcS="imgs/pedro.svg" name="Pedro Estevão" altS="Um entusiasta da tecnologia e especialista em desenvolvimento de software. Sempre pronto para solucionar problemas e explorar novas ideias, ele combina criatividade e habilidades técnicas para criar soluções eficientes. Pedro é o tipo de pessoa que inspira confiança na equipe com sua dedicação e foco nos detalhes." />
                 </div>
             </MaxWidthWrapper>
         </section>

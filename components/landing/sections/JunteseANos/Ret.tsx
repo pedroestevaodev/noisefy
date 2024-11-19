@@ -8,7 +8,7 @@ type RetProps = {
 
 const Ret: React.FC<RetProps> = ({ nome, fotoPerfil, recomendacao }) => {
 	return (
-		<div className="w-auto h-auto relative bg-purple-200 sm:p-6 shadow-lg flex flex-col items-start justify-start rounded-sm p-4">
+		<div className="w-auto h-auto relative bg-purple-400 sm:p-6 shadow-lg flex flex-col items-start justify-start rounded-sm p-4">
 			{/* Header com foto de perfil e nome */}
 			<div className="flex items-center mb-4">
 				<img

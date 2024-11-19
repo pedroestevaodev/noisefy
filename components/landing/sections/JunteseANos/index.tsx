@@ -1,5 +1,6 @@
 import React from "react";
 import ComentariosGrid from "./depoimentos";
+import { MaxWidthWrapper } from "@/components/common/MaxWidthWrapper";
 
 
 const comentariosData = [
@@ -48,16 +49,18 @@ const comentariosData = [
 
 const JunteseANos = () => {
 	return (
-		<section className="pt-8 container" id="lp-juntese-a-nos">
-			<h3 className="text-3xl font-bold text-left text-noisefy-800 border-l-8 border-noisefy-800 pl-4 ml-4 uppercase">
-				Junte -se aos mais de 50.000 usuários
-			</h3>
-			<p className="text-lg pt-5 text-foreground-700 text-left ml-4">
-				Clientes satisfeitos ao redor do mundo estão utilizando Noisefy para transformar suas imagens com rapidez e precisão.
-			</p>
-			<div className="p-4 mt-3">
-				<ComentariosGrid comentarios={comentariosData} />
-			</div>
+		<section className="space-y-6 py-12 sm:py-20" id="lp-how-we-are">
+            <MaxWidthWrapper className="relative flex flex-col gap-14 max-w-[1440px] mx-auto">
+				<h3 className="text-3xl font-bold text-left text-noisefy-800 border-l-8 border-noisefy-800 pl-4 ml-4 uppercase">
+					Junte -se aos mais de 50.000 usuários
+				</h3>
+				<p className="text-lg pt-5 text-foreground-700 text-left ml-4">
+					Clientes satisfeitos ao redor do mundo estão utilizando Noisefy para transformar suas imagens com rapidez e precisão.
+				</p>
+				<div className="p-4 mt-3">
+					<ComentariosGrid comentarios={comentariosData} />
+				</div>
+			</MaxWidthWrapper>
 		</section>
 	);
 };

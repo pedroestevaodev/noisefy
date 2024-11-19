@@ -15,9 +15,10 @@ import { pricingData } from "@/config/subscriptions";
 interface PricingCardsProps {
   userId?: string;
   subscriptionPlan?: UserSubscriptionPlan;
+  isLanding?: boolean;
 }
 
-export function PricingCards({ userId, subscriptionPlan }: PricingCardsProps) {
+export function PricingCards({ userId, subscriptionPlan, isLanding = false }: PricingCardsProps) {
   const isYearlyDefault =
     !subscriptionPlan?.stripeCustomerId || subscriptionPlan.interval === "year"
       ? true
@@ -28,14 +29,15 @@ export function PricingCards({ userId, subscriptionPlan }: PricingCardsProps) {
     setIsYearly(!isYearly);
   };
 
-  const PricingCard = ({ offer }: { offer: SubscriptionPlan }) => {
+  const PricingCard = ({ offer, isLanding = false }: { offer: SubscriptionPlan; isLanding?: boolean }) => {
     return (
       <div
         className={cn(
           "relative flex flex-col overflow-hidden rounded-3xl border shadow-sm",
-          offer.title.toLocaleLowerCase() === "pro"
+          offer.title.toLocaleLowerCase() === "pro" && !isLanding
             ? "-m-0.5 border-2 border-purple-400"
             : "",
+          isLanding && "bg-white dark:bg-indigo-950"
         )}
         key={offer.title}
       >
@@ -59,15 +61,15 @@ export function PricingCards({ userId, subscriptionPlan }: PricingCardsProps) {
                 )}
               </div>
               <div className="-mb-1 ml-2 text-left text-sm font-medium text-muted-foreground">
-                <div>/month</div>
+                <div>/mês</div>
               </div>
             </div>
           </div>
           {offer.prices.monthly > 0 ? (
             <div className="text-left text-sm text-muted-foreground">
               {isYearly
-                ? `$${offer.prices.yearly} will be charged when annual`
-                : "when charged monthly"}
+                ? `$${offer.prices.yearly} será cobrado anualmente`
+                : "cobrado mensalmente"}
             </div>
           ) : null}
         </div>
@@ -93,7 +95,7 @@ export function PricingCards({ userId, subscriptionPlan }: PricingCardsProps) {
               ))}
           </ul>
 
-          {userId && subscriptionPlan ? (
+          {(userId && subscriptionPlan) ? (
             offer.title === "Starter" ? (
               <Link
                 href="/dashboard"
@@ -105,7 +107,7 @@ export function PricingCards({ userId, subscriptionPlan }: PricingCardsProps) {
                   "w-full",
                 )}
               >
-                Go to dashboard
+                Ir para o dashboard
               </Link>
             ) : (
               <BillingFormButton
@@ -124,7 +126,7 @@ export function PricingCards({ userId, subscriptionPlan }: PricingCardsProps) {
               rounded="full"
               onClick={() => window.location.assign("/login")}
             >
-              Sign in
+              Cadastrar-se
             </Button>
           )}
         </div>
@@ -135,7 +137,9 @@ export function PricingCards({ userId, subscriptionPlan }: PricingCardsProps) {
   return (
     <MaxWidthWrapper>
       <section className="flex flex-col items-center text-center">
-        <HeaderSection label="Pricing" title="Start at full speed !" />
+        {!isLanding && (
+          <HeaderSection label="Preços" title="Comece a toda velocidade!" />
+        )}
 
         <div className="mb-4 mt-10 flex items-center gap-5">
           <ToggleGroup
@@ -151,38 +155,23 @@ export function PricingCards({ userId, subscriptionPlan }: PricingCardsProps) {
               className="rounded-full px-5 data-[state=on]:!bg-primary data-[state=on]:!text-primary-foreground"
               aria-label="Toggle yearly billing"
             >
-              Yearly (-20%)
+              Anual (-20%)
             </ToggleGroupItem>
             <ToggleGroupItem
               value="monthly"
               className="rounded-full px-5 data-[state=on]:!bg-primary data-[state=on]:!text-primary-foreground"
               aria-label="Toggle monthly billing"
             >
-              Monthly
+              Mensal
             </ToggleGroupItem>
           </ToggleGroup>
         </div>
 
         <div className="grid gap-5 bg-inherit py-5 lg:grid-cols-3">
           {pricingData.map((offer) => (
-            <PricingCard offer={offer} key={offer.title} />
+            <PricingCard offer={offer} isLanding={isLanding} key={offer.title} />
           ))}
         </div>
-
-        <p className="mt-3 text-balance text-center text-base text-muted-foreground">
-          Email{" "}
-          <a
-            className="font-medium text-primary hover:underline"
-            href="mailto:support@saas-starter.com"
-          >
-            support@saas-starter.com
-          </a>{" "}
-          for to contact our support team.
-          <br />
-          <strong>
-            You can test the subscriptions and won&apos;t be charged.
-          </strong>
-        </p>
       </section>
     </MaxWidthWrapper>
   );
