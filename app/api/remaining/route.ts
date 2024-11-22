@@ -1,10 +1,12 @@
+import "@/lib/dayjsConfig";
+import dayjs from "dayjs";
 import { prisma } from "@/lib/prisma";
 import { currentUser } from "@/lib/session";
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
 export const dynamic = "force-dynamic";
 
-export const GET = async (req: NextRequest) => {
+export const GET = async () => {
     try {
         const user = await currentUser();
         const userId = user?.id;
@@ -27,9 +29,13 @@ export const GET = async (req: NextRequest) => {
             dailyLimit = 10000;
         }
 
-        const now = new Date();
-        const resetAt = new Date(now);
-        resetAt.setHours(Number(process.env.REMAINING_RESET_HOUR), 0, 0, 0);
+        const now = dayjs();
+        const resetHour = Number(process.env.REMAINING_RESET_HOUR) || 19;
+        let resetAt = now.hour(resetHour).minute(0).second(0).millisecond(0);
+
+        if (now.isAfter(resetAt)) {
+            resetAt = resetAt.add(1, "day");
+        }
 
         let userRateLimit = await prisma.rateLimit.findUnique({ where: { userId } });
 
@@ -38,28 +44,28 @@ export const GET = async (req: NextRequest) => {
                 data: {
                     userId,
                     count: 0,
-                    resetAt,
+                    resetAt: resetAt.toDate(),
                 },
             });
-        } else if (now > userRateLimit.resetAt) {
+        } else if (now.toDate() > userRateLimit.resetAt) {
             userRateLimit = await prisma.rateLimit.update({
                 where: { userId },
                 data: {
                     count: 0,
-                    resetAt,
+                    resetAt: resetAt.toDate(),
                 },
             });
         }
 
         const remainingGenerations = Math.max(0, dailyLimit - userRateLimit.count);
-        const diff = userRateLimit.resetAt.getTime() - now.getTime();
-        const hours = Math.floor(diff / (1000 * 60 * 60));
-        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const diff = resetAt.diff(now, "minute");
+        const hours = Math.floor(diff / 60);
+        const minutes = diff % 60;
 
         return NextResponse.json(
             {
                 remainingGenerations,
-                resetDate: userRateLimit.resetAt,
+                resetDate: resetAt.toDate(),
                 hours,
                 minutes,
             },

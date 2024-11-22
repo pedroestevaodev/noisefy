@@ -1,4 +1,5 @@
 import "@/styles/globals.css";
+import "@/lib/dayjsConfig";
 import type { Metadata, Viewport } from "next";
 import clsx from "clsx";
 import Providers from "@/components/Providers";

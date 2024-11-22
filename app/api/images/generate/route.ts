@@ -1,3 +1,5 @@
+import "@/lib/dayjsConfig";
+import dayjs from "dayjs";
 import { uploadCloudinary } from "@/lib/cloudinary";
 import { prisma } from "@/lib/prisma";
 import { currentUser } from "@/lib/session";
@@ -14,7 +16,18 @@ export const POST = async (req: NextRequest) => {
             return NextResponse.json({ error: "User is not authenticated.", status: 401 });
         }
 
-        const now = new Date();
+        const now = dayjs();
+        const resetHour = Number(process.env.REMAINING_RESET_HOUR) || 19;
+        const resetAt = now.hour(resetHour).minute(0).second(0).millisecond(0);
+
+        if (now.isAfter(resetAt)) {
+            resetAt.add(1, "day");
+        }
+
+        const rateLimitConfig = {
+            rateLimit: Number(process.env.REMAINING_RATE_LIMIT) || 10,
+        };
+
         const userRateLimit = await prisma.rateLimit.findUnique({ where: { userId } });
 
         if (!userRateLimit) {
@@ -22,22 +35,22 @@ export const POST = async (req: NextRequest) => {
                 data: {
                     userId,
                     count: 1,
-                    resetAt: new Date(now.getTime() + (Number(process.env.REMAINING_RESET_HOUR) ?? 19)),
+                    resetAt: resetAt.toDate(),
                 },
             });
         } else {
-            if (now > userRateLimit.resetAt) {
+            if (now.isAfter(dayjs(userRateLimit.resetAt))) {
                 await prisma.rateLimit.update({
                     where: { userId },
                     data: {
                         count: 1,
-                        resetAt: new Date(now.getTime() + (Number(process.env.REMAINING_RESET_HOUR) ?? 19)),
+                        resetAt: resetAt.toDate(),
                     },
                 });
-            } else if (userRateLimit!.count >= (Number(process.env.REMAINING_RATE_LIMIT) ?? 2)) {
-                const diff = userRateLimit.resetAt.getTime() - now.getTime();
+            } else if (userRateLimit.count >= rateLimitConfig.rateLimit) {
+                const diff = dayjs(userRateLimit.resetAt).diff(now);
                 const hours = Math.floor(diff / (1000 * 60 * 60));
-                const minutes = Math.floor(diff / (1000 * 60)) % 60;
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
 
                 return NextResponse.json({ error: `Your generations will renew in ${hours} hours and ${minutes} minutes.`, status: 429 });
             } else {
