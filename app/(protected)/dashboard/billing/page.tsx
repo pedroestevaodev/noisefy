@@ -3,12 +3,10 @@ import { Icons } from "@/components/common/Icons";
 import { BillingInfo } from "@/components/dashboard/BillingInfo";
 import { DashboardHeader } from "@/components/dashboard/Header";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { currentUser } from "@/lib/session";
 import { getUserSubscriptionPlan } from "@/lib/subscription";
 import { auth } from "@/services/auth";
 
 const BillingPage = async () => {
-	const user = await currentUser();
 	const session = await auth();
 
 	if (!session?.user.id) {
@@ -20,23 +18,22 @@ const BillingPage = async () => {
 	return (
 		<>
 			<DashboardHeader
-				heading="Billing"
-				text="Manage billing and your subscription plan."
+				heading="Pagamento"
+				text="Gerencie sua assinatura e informações de pagamento."
 			/>
 			<div className="grid gap-8">
 				<Alert className="!pl-14">
 					<Icons.warning />
-					<AlertTitle>This is a demo app.</AlertTitle>
+					<AlertTitle>Este é um aplicativo de demonstração.</AlertTitle>
 					<AlertDescription className="text-balance">
-						SaaS Starter app is a demo app using a Stripe test environment. You
-						can find a list of test card numbers on the{" "}
+						Este software de demonstração é um aplicativo desenvolvido para fins educacionais, usando um ambiente de teste do Stripe. Você pode encontrar uma lista de números de cartão de teste na{" "}
 						<a
 							href="https://stripe.com/docs/testing#cards"
 							target="_blank"
 							rel="noreferrer"
 							className="font-medium underline underline-offset-8"
 						>
-							Stripe docs
+							documentação do Stripe
 						</a>
 						.
 					</AlertDescription>

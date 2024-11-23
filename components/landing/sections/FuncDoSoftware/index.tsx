@@ -21,7 +21,7 @@ const FuncDoSoftware = () => {
 								</CardContent>
 							</Card>
 							<Card className="bg-noisefy-500 text-white rounded-[10px] max-w-[700px]">
-								<CardHeader className="text-xl font-bold">Pre-Processing</CardHeader>
+								<CardHeader className="text-xl font-bold">Pré-Processamento</CardHeader>
 								<CardContent>
 									Dê o primeiro passo para resultados incríveis! Nosso sistema analisa e corrige automaticamente sua imagem, ajustando cores, brilho, contraste e removendo ruídos antes de iniciar o tratamento avançado. Ideal para fotos antigas ou imagens de baixa qualidade. Com o pré-processamento, suas fotos recebem uma base sólida para um upscaling perfeito e recuperação detalhada.
 								</CardContent>
@@ -49,13 +49,13 @@ const FuncDoSoftware = () => {
 						</div>
 						<div className="flex flex-col gap-10">
 							<Card className="bg-noisefy-500 text-white rounded-[10px] max-w-[700px]">
-								<CardHeader className="text-xl font-bold">Image Color Converter</CardHeader>
+								<CardHeader className="text-xl font-bold">Limiar</CardHeader>
 								<CardContent>
 									Facilite a segmentação das imagens isolando objetos e regiões específicas com técnicas de limiarização. Isso é crucial para identificar áreas de interesse em imagens complexas.
 								</CardContent>
 							</Card>
 							<Card className="bg-noisefy-500 text-white rounded-[10px] max-w-[700px]">
-								<CardHeader className="text-xl font-bold">Histogram</CardHeader>
+								<CardHeader className="text-xl font-bold">Histograma</CardHeader>
 								<CardContent>
 									Visualize a distribuição de intensidade dos pixels nas suas imagens, ajustando o contraste e a exposição de maneira eficiente. Essencial para ajustes de qualidade em fotografias e designs.
 								</CardContent>

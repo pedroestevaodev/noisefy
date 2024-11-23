@@ -6,7 +6,7 @@ const UpgradeCard = ({ ...props }) => {
     return (
         <Card
             className={cn(
-                "md:max-xl:rounded-none md:max-xl:border-none md:max-xl:shadow-none bg-background dark:bg-noisefy-800/70",
+                "md:max-xl:rounded-none md:max-xl:border-none md:max-xl:shadow-none bg-background border-none dark:bg-noisefy-800/70",
                 props.className,
             )}
         >

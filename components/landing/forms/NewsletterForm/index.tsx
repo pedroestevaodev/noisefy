@@ -54,7 +54,7 @@ const NewsletterForm = () => {
                                     type="email"
                                     id="footer-email-newsletter"
                                     className="dark:border-white/40 text-white placeholder:text-neutral-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-full px-4"
-                                    placeholder="janedoe@example.com"
+                                    placeholder="peterparker@example.com"
                                     {...field}
                                 />
                             </FormControl>
@@ -67,7 +67,7 @@ const NewsletterForm = () => {
                     rounded="full" 
                     className="bg-white hover:bg-white/70 text-black font-semibold !mt-4 px-4 max-sm:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
                 >
-                    Subscribe
+                    Inscrever-se
                 </Button>
             </form>
         </Form>

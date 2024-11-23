@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 import { useStudio } from "@/contexts/studioCtx";
 import { appendNewToName, downloadPhoto } from "@/utils/studio";
 import { useApiData } from "@/hooks/useApiData";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
 const StudioOptionsList = () => {
     const {
@@ -128,7 +128,7 @@ const StudioOptionsList = () => {
                                     disabled={!originalPhoto.content || loading.isLoading || !restoredImage.content}
                                 >
                                     <FlipHorizontal className="text-muted-foreground" size={16} />
-                                    <span>Compare</span>
+                                    <span>Comparar</span>
                                 </Button>
                             </>
                         )}

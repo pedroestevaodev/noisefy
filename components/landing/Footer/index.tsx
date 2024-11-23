@@ -58,7 +58,7 @@ const Footer = () => {
                         >
                             Sara
                         </Link>
-                        , e{" "}
+                        ,{" "}
                         <Link
                             href={socialLinks.perfis.sergio}
                             target="_blank"
@@ -67,7 +67,7 @@ const Footer = () => {
                         >
                             Sérgio
                         </Link>
-                        ,{" "}
+                        , e{" "}
                         <Link
                             href={socialLinks.perfis.sergio}
                             target="_blank"

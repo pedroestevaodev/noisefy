@@ -124,7 +124,7 @@ export function PricingCards({ userId, subscriptionPlan, isLanding = false }: Pr
                   : "outline"
               }
               rounded="full"
-              onClick={() => window.location.assign("/login")}
+              onClick={() => window.location.assign("/register")}
             >
               Cadastrar-se
             </Button>

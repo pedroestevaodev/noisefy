@@ -3,7 +3,7 @@ import { PlansRow, SubscriptionPlan } from "@/types/subscription";
 export const pricingData: SubscriptionPlan[] = [
 	{
 		title: "Starter",
-		description: "For Beginners",
+		description: "Para iniciantes",
 		benefits: [
 			"10 créditos diários",
 			"Conversão de cores limitada",
@@ -25,7 +25,7 @@ export const pricingData: SubscriptionPlan[] = [
 	},
 	{
 		title: "Pro",
-		description: "Unlock Advanced Features",
+		description: "Desbloqueie recursos avançados",
 		benefits: [
 			"500 créditos diários",
 			"Conversão de cores ilimitada",
@@ -47,7 +47,7 @@ export const pricingData: SubscriptionPlan[] = [
 	},
 	{
 		title: "Business",
-		description: "For Power Users",
+		description: "Para usuários avançados",
 		benefits: [
 			"10.000 créditos diários",
 			"Conversão de cores ilimitada",

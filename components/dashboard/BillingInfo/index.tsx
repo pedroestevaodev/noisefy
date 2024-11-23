@@ -28,8 +28,8 @@ const BillingInfo = ({ userSubscriptionPlan }: BillingInfoProps) => {
                 {isPaid ? (
                     <p className="text-sm font-medium text-muted-foreground">
                         {isCanceled
-                            ? "Your plan will be canceled on "
-                            : "Your plan renews on "}
+                            ? "Seu plano será cancelado em "
+                            : "Seu plano será renovado em "}
                         {formatDate(stripeCurrentPeriodEnd)}.
                     </p>
                 ) : null}
