@@ -13,7 +13,7 @@ const DashboardNavbar = ({ links }: DashboardSidebarProps) => {
     const { data } = useApiData('/api/remaining');
 
     return (
-        <header className="sticky top-0 flex h-14 lg:h-[60px] bg-background px-4 xl:px-8 z-50">
+        <header className="sticky top-0 flex h-14 lg:h-[60px] px-4 xl:px-8 z-50">
             <div className="flex items-center gap-x-3 px-0 w-full">
                 <MobileSheetSidebar links={links} />
 

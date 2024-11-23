@@ -1,9 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 
 const UpgradeCard = ({ ...props }) => {
     return (
-        <Card className={`md:max-xl:rounded-none md:max-xl:border-none md:max-xl:shadow-none bg-noisefy-50 ${props.className}`}>
+        <Card
+            className={cn(
+                "md:max-xl:rounded-none md:max-xl:border-none md:max-xl:shadow-none bg-background dark:bg-noisefy-800/70",
+                props.className,
+            )}
+        >
             <CardHeader className="md:max-xl:px-4">
                 <CardTitle>Faça upgrade!</CardTitle>
                 <CardDescription>

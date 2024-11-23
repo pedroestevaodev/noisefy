@@ -20,6 +20,7 @@ const Hero = () => {
                             height={800}
                             priority={true}
                             alt="preview landing"
+                            unoptimized
                         />
                     </MaxWidthWrapper>
                 </div>

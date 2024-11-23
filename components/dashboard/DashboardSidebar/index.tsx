@@ -13,12 +13,16 @@ import { usePathname } from "next/navigation";
 import { Fragment, useEffect, useState } from "react";
 import { UpgradeCard } from "../UpgradeCard";
 import { siteMetadata } from "@/config/site";
+import Image from "next/image";
+import { useTheme } from "next-themes";
 
 const DashboardSidebar = ({ links }: DashboardSidebarProps) => {
     const path = usePathname();
+    const { theme } = useTheme();
 
     const { isTablet } = useMediaQuery();
     const [isSidebarExpanded, setIsSidebarExpanded] = useState<boolean>(!isTablet);
+    const [noisefyLogo, setNoisefyLogo] = useState<string>('/imgs/camera-noisefy-purple.png');
 
     const toggleSidebar = () => {
         setIsSidebarExpanded(!isSidebarExpanded);
@@ -28,40 +32,52 @@ const DashboardSidebar = ({ links }: DashboardSidebarProps) => {
         setIsSidebarExpanded(!isTablet);
     }, [isTablet]);
 
+    useEffect(() => {
+        theme === "dark" ? setNoisefyLogo('/imgs/camera-noisefy-white.png') : setNoisefyLogo('/imgs/camera-noisefy-purple.png');
+    }, [theme]);
+
     return (
         <div className="sticky top-0 h-full">
-            <ScrollArea className="h-full overflow-y-auto border-r bg-noisefy-50">
+            <ScrollArea className="h-full overflow-y-auto border-r bg-noisefy-50 dark:bg-noisefy-900">
                 <aside
                     className={cn(
                         isSidebarExpanded ? "w-[220px] xl:w-[260px]" : "w-[68px]",
-                        "hidden h-screen md:block [transition:width_0.25s_ease-in-out]",
+                        "hidden h-screen md:block transition-all duration-200",
                     )}
                 >
                     <div className="flex h-full max-h-screen flex-1 flex-col gap-2">
                         <div className="relative flex h-14 items-center justify-between p-4 lg:h-[60px]">
                             <Link
-                            href="#"
-                                className={`relative flex items-center gap-2 text-lg font-semibold z-1 ${isSidebarExpanded ? "opacity-100 w-full" : "opacity-0 w-0"} [transition:opacity_0.2s_ease-in-out,_width_0.2s_ease-in-out]`}
+                                href="/dashboard"
+                                className={cn(
+                                    "relative flex items-center gap-2 text-lg font-semibold z-1 transition-all duration-200",
+                                    isSidebarExpanded ? "opacity-100 w-full" : "opacity-0 w-0",
+                                )}
                             >
-                                <img 
-                                    src="/imgs/camera-noisefy-purple.png" 
-                                    alt="Noisefy logo" 
-                                    className="w-9 h-7 min-w-6"
+                                <Image
+                                    src={noisefyLogo}
+                                    width={36}
+                                    height={30}
+                                    alt="Noisefy logo"
+                                    className="w-9 h-[30px] min-w-9 transition-all duration-200"
                                 />
-                                <span className="font-urban text-xl font-bold text-noisefy-800">
+                                <span className="font-urban text-xl font-bold text-noisefy-800 dark:text-white transition-all duration-200">
                                     {siteMetadata.applicationName}
                                 </span>
                             </Link>
                             <Button
                                 variant="ghost"
                                 size="icon"
-                                className={`relative size-9 lg:size-8 z-2 ${isSidebarExpanded ? 'm-0' : 'mr-[3px]'}`}
+                                className={cn(
+                                    "relative size-9 lg:size-8 z-2 dark:hover:bg-noisefy-800/70",
+                                    isSidebarExpanded ? 'm-0' : 'mr-[3px]',
+                                )}
                                 onClick={toggleSidebar}
                             >
                                 {isSidebarExpanded ? (
-                                    <img src="/imgs/icon-menu-aberto.png" alt="Close" className="size-5" />
+                                    <Image src="/imgs/icon-menu-aberto.png" width={20} height={20} alt="Close" className="size-5 dark:invert" />
                                 ) : (
-                                    <img src="/imgs/icon-menu-fechado.png" alt="Close" className="size-5" />
+                                    <Image src="/imgs/icon-menu-fechado.png" width={20} height={20} alt="Close" className="size-5 dark:invert" />
                                 )}
                                 <span className="sr-only">Toggle Sidebar</span>
                             </Button>
@@ -73,7 +89,12 @@ const DashboardSidebar = ({ links }: DashboardSidebarProps) => {
                                     key={section.title}
                                     className="flex flex-col gap-0.5"
                                 >
-                                    <p className={`text-xs text-muted-foreground ${isSidebarExpanded ? "opacity-100" : "opacity-0"} [transition:opacity_0.2s_ease-in-out]`}>
+                                    <p
+                                        className={cn(
+                                            "text-xs text-muted-foreground transition-all duration-200",
+                                            isSidebarExpanded ? "opacity-100" : "opacity-0",
+                                        )}
+                                    >
                                         {section.title}
                                     </p>
                                     {section.items.map((item) => {
@@ -87,16 +108,20 @@ const DashboardSidebar = ({ links }: DashboardSidebarProps) => {
                                                                 key={`link-tooltip-${item.title}`}
                                                                 href={item.disabled ? "#" : item.href}
                                                                 className={cn(
-                                                                    "flex items-center gap-3 rounded-md p-2 text-sm font-medium hover:bg-noisefy-100",
+                                                                    "flex items-center gap-3 rounded-md p-2 text-sm font-medium hover:bg-background dark:hover:bg-noisefy-800/50 group/item-sidebar transition-all duration-200",
                                                                     path === item.href
-                                                                        ? "bg-noisefy-200"
+                                                                        ? "bg-background dark:bg-noisefy-800/70"
                                                                         : "text-muted-foreground hover:text-accent-foreground",
-                                                                    item.disabled &&
-                                                                    "cursor-not-allowed opacity-80 hover:bg-transparent hover:text-muted-foreground",
+                                                                    item.disabled && "cursor-not-allowed opacity-80 hover:bg-transparent",
                                                                 )}
                                                             >
-                                                                <Icon className="size-5 min-w-5" />
-                                                                <span className={`flex items-center justify-between gap-3 w-full min-w-[140px] xl:min-w-[180px] ${isSidebarExpanded ? `opacity-100` : `opacity-0`} [transition:opacity_0.2s_ease-in-out]`}>
+                                                                <Icon className="size-5 min-w-5 group-hover/item-sidebar:text-accent-foreground transition-all duration-200" />
+                                                                <span
+                                                                    className={cn(
+                                                                        "flex items-center justify-between gap-3 w-full min-w-[140px] xl:min-w-[180px] group-hover/item-sidebar:text-accent-foreground transition-all duration-200",
+                                                                        isSidebarExpanded ? `opacity-100` : `opacity-0`,
+                                                                    )}
+                                                                >
                                                                     {item.title}
                                                                     {item.badge && (
                                                                         <Badge className="ml-auto flex size-5 shrink-0 items-center justify-center rounded-full">
@@ -119,9 +144,11 @@ const DashboardSidebar = ({ links }: DashboardSidebarProps) => {
                         </nav>
 
                         <div className="mt-auto xl:p-4">
-                            {/* {isSidebarExpanded ? <UpgradeCard className={``} /> : null} */}
                             <UpgradeCard
-                                className={`${isSidebarExpanded ? `opacity-100` : `opacity-0`} md:max-xl:w-[220px] xl:w-[228px] [transition:opacity_0.2s_ease-in-out]`}
+                                className={cn(
+                                    isSidebarExpanded ? `opacity-100` : `opacity-0`,
+                                    "md:max-xl:w-[220px] xl:w-[228px] transition-all duration-200",
+                                )}
                             />
                         </div>
                     </div>

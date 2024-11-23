@@ -17,7 +17,7 @@ const RootLayout = ({
 		<html lang="pt-BR" suppressHydrationWarning>
 			<body
 				className={clsx(
-					"min-h-screen bg-background antialiased",
+					"min-h-screen bg-background dark:bg-noisefy-950 antialiased",
 					fontMontserrat.className
 				)}
 			>
