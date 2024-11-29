@@ -34,6 +34,7 @@ const FuncDoSoftware = () => {
 								width={611}
 								height={611}
 								alt=""
+								unoptimized
 							/>
 						</div>
 					</div>
@@ -45,6 +46,7 @@ const FuncDoSoftware = () => {
 								width={611}
 								height={611}
 								alt=""
+								unoptimized
 							/>
 						</div>
 						<div className="flex flex-col gap-10">
