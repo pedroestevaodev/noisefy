@@ -13,7 +13,7 @@ const UpgradeCard = ({ ...props }) => {
             <CardHeader className="md:max-xl:px-4">
                 <CardTitle>Faça upgrade!</CardTitle>
                 <CardDescription>
-                    Desbloquei todas funções com o plano Pro e garanta acesso ilimitado com nosso time de suporte.
+                    Desbloqueie todas as funções com o plano Pro e garanta acesso ilimitado com nosso time de suporte.
                 </CardDescription>
             </CardHeader>
             <CardContent className="md:max-xl:px-4">
