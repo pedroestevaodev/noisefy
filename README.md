@@ -44,7 +44,7 @@ cd noisefy
 ### 2. Install dependencies
 
 ```bash
-$ npm install
+$ bun install
 ```
 
 ### 3. Environment Variables
@@ -80,7 +80,7 @@ REMAINING_RESET_HOUR="tobemodified"
 ### 4. Start the development server
 
 ```bash
-$ npm run dev
+$ bun run dev
 ```
 
 Open your browser and visit `http://localhost:3000` to see the project in action.
